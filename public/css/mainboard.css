@@ -1,0 +1,29 @@
+/*
+ |----------------------------------------------------------------------------
+ | METHODS
+ |----------------------------------------------------------------------------
+ |
+ | How to use in other SCSS:
+ |   .[classname] { @extend %[methodname] }
+ |
+ */
+
+.clearfix:after {
+  content: " ";
+  clear: both;
+  display: block;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc291cmNlcy9hc3NldHMvc2Fzcy9jb21tb25pemUuc2NzcyIsInJlc291cmNlcy9hc3NldHMvc2Fzcy9fdmFyaWFibGVzLnNjc3MiXSwic291cmNlc0NvbnRlbnQiOlsiQGltcG9ydCBcInZhcmlhYmxlc1wiO1xuXG4uY2xlYXJmaXg6YWZ0ZXIge1xuICBAZXh0ZW5kICVjbGVhcmZpeDtcbn1cblxuLmZsZXgge1xuXHRAZXh0ZW5kICVmbGV4O1xufVxuIiwiLy8gQm9keVxuJGJvZHktYmc6ICNmNWY4ZmE7XG5cbi8vIEJvcmRlcnNcbiRsYXJhdmVsLWJvcmRlci1jb2xvcjogZGFya2VuKCRib2R5LWJnLCAxMCUpO1xuJGxpc3QtZ3JvdXAtYm9yZGVyOiAkbGFyYXZlbC1ib3JkZXItY29sb3I7XG4kbmF2YmFyLWRlZmF1bHQtYm9yZGVyOiAkbGFyYXZlbC1ib3JkZXItY29sb3I7XG4kcGFuZWwtZGVmYXVsdC1ib3JkZXI6ICRsYXJhdmVsLWJvcmRlci1jb2xvcjtcbiRwYW5lbC1pbm5lci1ib3JkZXI6ICRsYXJhdmVsLWJvcmRlci1jb2xvcjtcblxuLy8gQnJhbmRzXG4kYnJhbmQtcHJpbWFyeTogIzMwOTdEMTtcbiRicmFuZC1pbmZvOiAjOGViNGNiO1xuJGJyYW5kLXN1Y2Nlc3M6ICMyYWIyN2I7XG4kYnJhbmQtd2FybmluZzogI2NiYjk1NjtcbiRicmFuZC1kYW5nZXI6ICNiZjUzMjk7XG5cbi8vIFR5cG9ncmFwaHlcbiRpY29uLWZvbnQtcGF0aDogXCJ+Ym9vdHN0cmFwLXNhc3MvYXNzZXRzL2ZvbnRzL2Jvb3RzdHJhcC9cIjtcbi8vICRmb250LWZhbWlseS1zYW5zLXNlcmlmOiBcIlJhbGV3YXlcIiwgc2Fucy1zZXJpZjtcbiRmb250LWZhbWlseS1zYW5zLXNlcmlmOiBcIlJhbGV3YXlcIiwgXCJOb3RvIFNhbnMgSlBcIiwgXCLmuLjjgrTjgrfjg4Pjgq8gTWVkaXVtXCIsIFwi5ri444K044K344OD44Kv5L2TXCIsIFwiWXUgR290aGljIE1lZGl1bVwiLCBZdUdvdGhpYywgXCLjg5Ljg6njgq7jg47op5LjgrQgUHJvTlwiLCBcIkhpcmFnaW5vIEtha3UgR290aGljIFByb05cIiwgXCLjg6HjgqTjg6rjgqpcIiwgTWVpcnlvLCBcIu+8re+8syDvvLDjgrTjgrfjg4Pjgq9cIiwgXCJNUyBQR290aGljXCIsIHNhbnMtc2VyaWY7O1xuJGZvbnQtc2l6ZS1iYXNlOiAxNHB4O1xuJGxpbmUtaGVpZ2h0LWJhc2U6IDEuNjtcbiR0ZXh0LWNvbG9yOiAjNjM2YjZmO1xuXG4vLyBOYXZiYXJcbiRuYXZiYXItZGVmYXVsdC1iZzogI2ZmZjtcblxuLy8gQnV0dG9uc1xuJGJ0bi1kZWZhdWx0LWNvbG9yOiAkdGV4dC1jb2xvcjtcblxuLy8gSW5wdXRzXG4kaW5wdXQtYm9yZGVyOiBsaWdodGVuKCR0ZXh0LWNvbG9yLCA0MCUpO1xuJGlucHV0LWJvcmRlci1mb2N1czogbGlnaHRlbigkYnJhbmQtcHJpbWFyeSwgMjUlKTtcbiRpbnB1dC1jb2xvci1wbGFjZWhvbGRlcjogbGlnaHRlbigkdGV4dC1jb2xvciwgMzAlKTtcblxuLy8gUGFuZWxzXG4kcGFuZWwtZGVmYXVsdC1oZWFkaW5nLWJnOiAjZmZmO1xuXG4vKlxuIHwtLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tXG4gfCBNRVRIT0RTXG4gfC0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS1cbiB8XG4gfCBIb3cgdG8gdXNlIGluIG90aGVyIFNDU1M6XG4gfCAgIC5bY2xhc3NuYW1lXSB7IEBleHRlbmQgJVttZXRob2RuYW1lXSB9XG4gfFxuICovXG5cbiVjbGVhcmZpeCB7XG4gIGNvbnRlbnQ6IFwiIFwiO1xuICBjbGVhcjogYm90aDtcbiAgZGlzcGxheTogYmxvY2s7XG59XG5cbiVmbGV4IHtcblx0ZGlzcGxheTogZmxleDtcblx0anVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG5cdGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG4iXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFDdUNBOzs7Ozs7OztHQVFHO0FEN0NILEFDK0NBLFNEL0NTLEFBQUEsTUFBTSxDQytDTDtFQUNSLE9BQU8sRUFBRSxHQUFHO0VBQ1osS0FBSyxFQUFFLElBQUk7RUFDWCxPQUFPLEVBQUUsS0FBSztDQUNmOztBRC9DRCxBQ2lEQSxLRGpESyxDQ2lEQztFQUNMLE9BQU8sRUFBRSxJQUFJO0VBQ2IsZUFBZSxFQUFFLE1BQU07RUFDdkIsV0FBVyxFQUFFLE1BQU07Q0FDbkIifQ== */

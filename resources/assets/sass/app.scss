@@ -1,17 +1,65 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(//fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(//fonts.googleapis.com/earlyaccess/notosansjp.css);
 
 // Variables
 @import "variables";
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+// Font Awesome
+@import "node_modules/font-awesome-scss/scss/font-awesome.scss";
 
-.red {
-  color: red;
+$brand-base-color: #bdbdbd;
+
+#app {
+  header {
+    margin: 16px;
+    // text-align: center;
+    img {
+      display: block;
+      float: left;
+    }
+
+    nav {
+      ul {
+        // display: block;
+      }
+      li {
+        float: left;
+        list-style: none;
+        margin-left: 8px;
+        margin-right: 8px;
+        padding: 0;
+      }
+
+      a {
+        color: $brand-base-color;
+        border: solid 2px $brand-base-color;
+        border-radius: 3px;
+        display: inline-block;
+        padding: .3em 1em;
+        text-decoration: none;
+        transition: .4s;
+
+        &:hover {
+          background: $brand-base-color;
+          color: #fff;
+        }
+      }
+    }
+  }
 }
 
-.bold {
-  font-weight: bold;
+#logo {
+  width: 88px;
+}
+
+.clearfix:after {/* floatしてる親要素に指定しリセット */
+  @extend %clearfix;
+}
+
+.flex {/* 上下中央寄せ */
+	@extend %flex;
 }
