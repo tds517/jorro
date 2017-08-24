@@ -12,7 +12,10 @@
 </head>
 <body>
 <div id="app">
+  <el-color-picker></el-color-picker>
 
+
+  <!--
     <img id="logo" src="img/logo.png">
 
     <nav>
@@ -38,6 +41,7 @@
             <i class="fa fa-fw fa-apple"></i> APPS
           </a>
     </nav>
+  -->
 </div>
 
 <script src="js/app.js"></script>
