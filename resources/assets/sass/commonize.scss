@@ -1,9 +1,0 @@
-@import "variables";
-
-.clearfix:after {
-  @extend %clearfix;
-}
-
-.flex {
-	@extend %flex;
-}
