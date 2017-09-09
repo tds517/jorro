@@ -25,31 +25,12 @@ Vue.component('navbar-sns', require('./components/NavbarSNS.vue'));
 
 const router = new VueRouter({
   routes: [
-     {
-      path: '/',
-      component: require('./pages/Mainboard')
-    },
-    {
-      path: '/about',
-      component: require('./pages/About')
-    },
-    {
-      path: '/illusts',
-      component: require('./pages/Illusts')
-    },
-    {
-      path: '/comics',
-      component: require('./pages/comics')
-    },
-    {
-      path: '/photos',
-      component: require('./pages/photos')
-    },
-    {
-      path: '/Apps',
-      component: require('./pages/Apps')
-    }
-
+    { path: '/',        component: require('./pages/Mainboard') },
+    { path: '/about',   component: require('./pages/About') },
+    { path: '/illusts', component: require('./pages/Illusts') },
+    { path: '/comics',  component: require('./pages/comics') },
+    { path: '/photos',  component: require('./pages/photos') },
+    { path: '/Apps',    component: require('./pages/Apps') }
   ]
 })
 
@@ -63,7 +44,7 @@ const app = new Vue({
     mounted: function() {
       // ヘッダーの高さを測り、メインコンテンツを引き下げる
       var total = $('#main-header').outerHeight();
-      $('#main-cnt').css('padding-top', total + 8);
+      $('#main-cnt').css('padding-top', total);
     }
   },
   computed: {

@@ -33,7 +33,10 @@ body {
   .header__navbar {
     margin-top: 12px;
   }
+}
 
+#main-cnt {
+  padding: 8px;
 }
 
 .clearfix:after {/* floatしてる親要素に指定しリセット */

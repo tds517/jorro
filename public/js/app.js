@@ -13066,25 +13066,7 @@ Vue.component('navbar', __webpack_require__(83));
 Vue.component('navbar-sns', __webpack_require__(84));
 
 var router = new __WEBPACK_IMPORTED_MODULE_3_vue_router__["a" /* default */]({
-  routes: [{
-    path: '/',
-    component: __webpack_require__(138)
-  }, {
-    path: '/about',
-    component: __webpack_require__(135)
-  }, {
-    path: '/illusts',
-    component: __webpack_require__(147)
-  }, {
-    path: '/comics',
-    component: __webpack_require__(151)
-  }, {
-    path: '/photos',
-    component: __webpack_require__(152)
-  }, {
-    path: '/Apps',
-    component: __webpack_require__(144)
-  }]
+  routes: [{ path: '/', component: __webpack_require__(138) }, { path: '/about', component: __webpack_require__(135) }, { path: '/illusts', component: __webpack_require__(147) }, { path: '/comics', component: __webpack_require__(151) }, { path: '/photos', component: __webpack_require__(152) }, { path: '/Apps', component: __webpack_require__(144) }]
 });
 
 var app = new Vue({
@@ -13095,7 +13077,7 @@ var app = new Vue({
     mounted: function mounted() {
       // ヘッダーの高さを測り、メインコンテンツを引き下げる
       var total = $('#main-header').outerHeight();
-      $('#main-cnt').css('padding-top', total + 8);
+      $('#main-cnt').css('padding-top', total);
     }
   },
   computed: {}
@@ -83922,27 +83904,44 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 var notices = [{
   id: 1,
   content: 'お知らせです。リニューアルしました。',
-  thumbnail_path: 'img/illusts/14022201',
+  thumbnail_path: 'img/illusts/14022201.jpg',
   date: '2017/09/07'
 }, {
   id: 2,
   content: 'イラストをアップしました。',
-  thumbnail_path: 'img/illusts/14022201',
+  thumbnail_path: 'img/illusts/16103101.jpg',
   date: '2017/09/08'
 }, {
   id: 3,
-  content: '英数字テストです。1234567890ewaofijewoie36784',
-  thumbnail_path: 'img/illusts/14022201',
+  content: '英数字テストです。1234567890ewaofijewo ie36784',
+  thumbnail_path: 'img/illusts/kazuma4.jpg',
   date: '2017/09/09'
 }];
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
+  },
+  data: function data() {
+    return {
+      items: notices
+    };
   }
 });
 
@@ -83950,13 +83949,17 @@ var notices = [{
 /* 138 */
 /***/ (function(module, exports, __webpack_require__) {
 
+
+/* styles */
+__webpack_require__(156)
+
 var Component = __webpack_require__(7)(
   /* script */
   __webpack_require__(137),
   /* template */
   __webpack_require__(139),
   /* scopeId */
-  null,
+  "data-v-245260f1",
   /* cssModules */
   null
 )
@@ -83985,8 +83988,22 @@ module.exports = Component.exports
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('p', [_vm._v("Hello Mainboard World")])
-},staticRenderFns: []}
+  return _c('div', {
+    staticClass: "notices"
+  }, [_vm._m(0), _vm._v(" "), _c('ul', {
+    staticClass: "clearfix"
+  }, _vm._l((_vm.items), function(item) {
+    return _c('li', [_c('p', [_vm._v(_vm._s(item.date))]), _vm._v(" "), _c('img', {
+      attrs: {
+        "src": item.thumbnail_path
+      }
+    }), _vm._v(" "), _c('p', [_vm._v(_vm._s(item.content))])])
+  }))])
+},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('h1', [_c('i', {
+    staticClass: "fa fa-fw fa-bell-o"
+  }), _vm._v("\n    お知らせ\n  ")])
+}]}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -84260,6 +84277,39 @@ if (false) {
   if (module.hot.data) {
      require("vue-hot-reload-api").rerender("data-v-6ec3c9ed", module.exports)
   }
+}
+
+/***/ }),
+/* 155 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(9)();
+exports.push([module.i, "/*\n |----------------------------------------------------------------------------\n | METHODS\n |----------------------------------------------------------------------------\n |\n | How to use in other SCSS:\n |   .[classname] { @extend %[methodname] }\n |\n */\n.notices ul[data-v-245260f1] {\n  margin: 0;\n  padding: 0;\n}\n.notices li[data-v-245260f1] {\n  display: block;\n  float: left;\n  list-style-type: none;\n  max-width: 200px;\n  overflow-wrap: all;\n  word-wrap: all;\n}\n.notices li img[data-v-245260f1] {\n    max-width: 120px;\n}\n", ""]);
+
+/***/ }),
+/* 156 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(155);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(25)("76a4a8e5", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-245260f1\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Mainboard.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-245260f1\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./Mainboard.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
 }
 
 /***/ })
