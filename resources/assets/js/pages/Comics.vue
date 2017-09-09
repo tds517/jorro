@@ -1,5 +1,5 @@
 <template>
-  <p>Hello Mainboard World</p>
+  <p>Hello Comics World</p>
 </template>
 
 <script>

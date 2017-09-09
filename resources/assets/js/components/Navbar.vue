@@ -2,9 +2,9 @@
   <nav class="navbar">
     <ul class="clearfix flex">
       <li v-for="item in items">
-        <a :href="item.href">
+        <router-link :to="item.to">
           <i :class="['fa fa-fw', item.icon]"></i>
-        </a>
+        </router-link>
         {{ item.label }}
       </li>
     </ul>
@@ -21,27 +21,27 @@
         // Navbarのアイテム
         items: [
           {
-            href: "#about",
+            to: "about",
             icon: "fa-commenting-o",
             label: "ABOUT"
           },
           {
-            href: "#illusts",
+            to: "illusts",
             icon: "fa-picture-o",
             label: "ILLUSTS"
           },
           {
-            href: "#comics",
+            to: "comics",
             icon: "fa-book",
             label: "COMICS"
           },
           {
-            href: "#photos",
+            to: "photos",
             icon: "fa-camera-retro",
             label: "PHOTOS"
           },
           {
-            href: "#apps",
+            to: "apps",
             icon: "fa-apple",
             label: "APPS"
           }
