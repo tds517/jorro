@@ -1,49 +1,52 @@
 <template>
-  <div class="notices">
+
+
+  <section class="notices">
     <h1>
       <i class="fa fa-fw fa-bell-o"></i>
       お知らせ
     </h1>
-    <ul class="clearfix">
-      <li v-for="item in items">
-        <p>{{ item.date }}</p>
-        <img :src="item.thumbnail_path">
-        <p>{{ item.content }}</p>
-      </li>
-    </ul>
-  </div>
+    <el-row>
+      <el-col :span="4" :offset="(index === 0) ? 0 : 1"
+              v-for="(item, index) in items" :key="item">
+        <el-card :body-style="{ padding: 0, position: 'relative' }">
+          <span class="card__header">
+            <pages-icon :category="item.category"></pages-icon>
+            {{ item.category }}
+          </span>
+          <img :src="item.thumbnail_path" class="image">
+          <div style="padding: 14px">
+            <span>{{ item.content }}</span>
+            <div class="bottom clearfix">
+              <time class="time">{{ item.date }}</time>
+            </div>
+          </div>
+        </el-card>
+        </el-card>
+      </el-col>
+    </el-row>
+  </section>
 </template>
 
 <script>
-var notices = [
-  {
-    id: 1,
-    content: 'お知らせです。リニューアルしました。',
-    thumbnail_path: 'img/illusts/14022201.jpg',
-    date: '2017/09/07'
-  },
-  {
-    id: 2,
-    content: 'イラストをアップしました。',
-    thumbnail_path: 'img/illusts/16103101.jpg',
-    date: '2017/09/08'
-  },
-  {
-    id: 3,
-    content: '英数字テストです。1234567890ewaofijewo ie36784',
-    thumbnail_path: 'img/illusts/kazuma4.jpg',
-    date: '2017/09/09'
-  },
-]
+
+import notices from '../models/demodata/notices'
+import pages from './_pages'
 
 export default {
     mounted() {
-        console.log('Component mounted.')
     },
     data() {
       return {
         items: notices
       }
+    },
+    methods: {
+      // getIconId(category) {
+      //   return pages[category]['icon']
+      // }
+    },
+    computed: {
     }
 }
 </script>
@@ -52,23 +55,29 @@ export default {
   @import "../../sass/variables";
 
   .notices {
-
-    ul {
-      margin: 0;
-      padding: 0;
+    .time {
+      font-size: 13px;
+      color: #999;
     }
 
-    li {
+    .bottom {
+      margin-top: 13px;
+      line-height: 12px;
+    }
+
+    .image {
+      width: 100%;
       display: block;
-      float: left;
-      list-style-type: none;
-      max-width: 200px;
-      overflow-wrap: all;
-      word-wrap: all;
-
-      img {
-        max-width: 120px;
-      }
     }
+  }
+
+  // .el-card__header--ov .el-card__header {
+  .card__header {
+    background-color: rgba(255, 255, 255, .3);
+    color: #fff;
+    padding: 4px;
+    position: absolute;
+    radius: 8px;
+    width: 100%;
   }
 </style>

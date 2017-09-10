@@ -19,7 +19,9 @@
               :sm="{offset: 1, span: 13}"
               :md="{offset: 2, span: 2}">
         <h1>
-          <img id="logo" src="img/logo-gray.png">
+          <router-link to="/">
+            <img id="logo" src="img/logo-gray.png">
+          </router-link>
         </h1>
       </el-col>
 

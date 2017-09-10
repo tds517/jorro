@@ -1,51 +1,35 @@
 <template>
   <nav class="navbar">
     <ul class="clearfix flex">
-      <li v-for="item in items">
-        <router-link :to="item.to">
-          <i :class="['fa fa-fw', item.icon]"></i>
+      <li v-for="category in categories">
+        <router-link :to="getCategoryPathTo(category)">
+          <pages-icon :category="category"></pages-icon>
         </router-link>
-        {{ item.label }}
+        {{ renderUpperCase(category) }}
       </li>
     </ul>
   </nav>
 </template>
 
 <script>
+  import pages from '../pages/_pages'
   export default {
     mounted() {
-      console.log('Navbar mounted')
     },
     data() {
       return {
         // Navbarのアイテム
-        items: [
-          {
-            to: "about",
-            icon: "fa-commenting-o",
-            label: "ABOUT"
-          },
-          {
-            to: "illusts",
-            icon: "fa-picture-o",
-            label: "ILLUSTS"
-          },
-          {
-            to: "comics",
-            icon: "fa-book",
-            label: "COMICS"
-          },
-          {
-            to: "photos",
-            icon: "fa-camera-retro",
-            label: "PHOTOS"
-          },
-          {
-            to: "apps",
-            icon: "fa-apple",
-            label: "APPS"
-          }
-        ]
+        categories: ['about', 'illusts', 'comics', 'photos', 'apps']
+      }
+    },
+    methods: {
+      // カテゴリーのパス
+      getCategoryPathTo(category) {
+        return pages[category]['path']
+      },
+      // ラベル用に大文字に変換
+      renderUpperCase(label) {
+        return label.toUpperCase()
       }
     }
   }

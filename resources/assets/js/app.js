@@ -1,5 +1,4 @@
 require('./bootstrap');
-
 window.Vue = require('vue');
 
 /*
@@ -16,23 +15,18 @@ Vue.use(ElementUI, {locale})
  */
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
+import routes from './routes'
+
+const router = new VueRouter({
+  routes: routes
+})
 
 /*
   Components
  */
-Vue.component('navbar', require('./components/Navbar.vue'));
-Vue.component('navbar-sns', require('./components/NavbarSNS.vue'));
-
-const router = new VueRouter({
-  routes: [
-    { path: '/',        component: require('./pages/Mainboard') },
-    { path: '/about',   component: require('./pages/About') },
-    { path: '/illusts', component: require('./pages/Illusts') },
-    { path: '/comics',  component: require('./pages/comics') },
-    { path: '/photos',  component: require('./pages/photos') },
-    { path: '/Apps',    component: require('./pages/Apps') }
-  ]
-})
+Vue.component('pages-icon', require('./pages/PagesIconRender.vue'))
+Vue.component('navbar', require('./components/Navbar.vue'))
+Vue.component('navbar-sns', require('./components/NavbarSNS.vue'))
 
 
 const app = new Vue({
