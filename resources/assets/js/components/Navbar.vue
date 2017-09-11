@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import pages from '../pages/_pages'
+  import pages from '../pages/_settings'
   export default {
     mounted() {
     },
@@ -69,8 +69,8 @@
     }
 
     a {
-        background-color: lighten($brand-base-color, 17.5%);
-        border: 1px solid lighten($brand-base-color, 17.5%);
+        background-color: lighten($brand-base-color, 22.5%);
+        border: 1px solid lighten($brand-base-color, 10%);
         border-radius: 3px;
         color: $brand-base-color;
         display: block;

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import pages from './_pages'
+import pages from './_settings'
 
 export default {
   props: {

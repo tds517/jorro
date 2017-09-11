@@ -9,6 +9,10 @@ import locale from 'element-ui/lib/locale/lang/ja'
 import 'element-theme-default/theme/index.css'
 Vue.use(ElementUI, {locale})
 
+/*
+  Velocity.js
+ */
+import Velocity from 'velocity-animate'
 
 /*
   Vue Router
@@ -29,7 +33,7 @@ Vue.component('navbar', require('./components/Navbar.vue'))
 Vue.component('navbar-sns', require('./components/NavbarSNS.vue'))
 
 
-const app = new Vue({
+const vm = new Vue({
   router,
   el: '#app',
   data: {

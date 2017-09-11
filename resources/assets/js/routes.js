@@ -1,4 +1,4 @@
-import pages from './pages/_pages'
+import pages from './pages/_settings'
 export default [
   { path: '/',                      component: require('./pages/Mainboard') },
   { path: '/' + pages.about.path,   component: require('./pages/About') },
