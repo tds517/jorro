@@ -19,12 +19,5 @@ export default [
     message: '英数字テストです。1234567890ewaofijewo ie36784',
     thumbnail_path: 'img/illusts/kazuma4.jpg',
     date: '2017/09/09'
-  },
-  {
-    id: 5,
-    category: 'apps',
-    message: '英数字テストです。',
-    thumbnail_path: 'img/illusts/kazuma4.jpg',
-    date: '2017/09/09'
-  },
+  }
 ]

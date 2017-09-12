@@ -11,10 +11,9 @@
             :md="18">
 
       <section class="notice">
-        <h1>
-          <i :class="['fa fa-fw', categories.notice.icon]"></i>
+        <h1-baloon :icon-id="categories.notice.icon" color="red">
           {{ categories.notice.title }}
-        </h1>
+        </h1-baloon>
         <el-row>
           <el-col :span="3" :offset="1" class="card"
             v-for="(item, index) in notices" :key="item"
@@ -47,6 +46,7 @@
 
       <section class="favorite">
         <h1>
+          <!-- <i :class="['fa fa-fw', categories.favorite.icon]"></i> -->
           <i :class="['fa fa-fw', categories.favorite.icon]"></i>
           {{ categories.favorite.title }}
         </h1>
@@ -96,6 +96,8 @@
 import notices from '../models/demodata/notices'
 import pages from './_settings'
 
+import H1Baloon from '../components/headline/One_Baloon'
+
 // TODO: いずれは、お知らせ、お気に入り、履歴を一つのコンポーネントとしたい。
 // タイトルと、データと、オプションをプロパティとして、動的に。
 // TODO: コンテンツを色々変えてもいいかもしれない。
@@ -110,8 +112,8 @@ export default {
         favorites: [],
         hisotries: [],
         categories: {
-          notice:   { title: 'お知らせ', icon: 'fa-bell-o' },
-          favorite: { title: 'お気にいり', icon: 'fa-heart-o' },
+          notice:   { title: 'お知らせ', icon: 'fa-bell' },
+          favorite: { title: 'お気にいり', icon: 'fa-heart' },
           top_rank: { title: '人気ランキング', icon: 'fa-trophy' }
         }
       }
@@ -127,7 +129,8 @@ export default {
         }
       }
     },
-    computed: {
+    components: {
+      H1Baloon
     }
 }
 </script>
@@ -136,6 +139,10 @@ export default {
   @import "../../sass/variables";
 
   .notice,.favorite {
+    h1 {
+      color: $brand-base-color;
+      font-weight: normal;
+    }
 
     .card {
       min-width: 120px;

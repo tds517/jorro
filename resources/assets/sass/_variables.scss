@@ -1,15 +1,4 @@
-// Body
-$body-bg: #f5f8fa;
-
-// Borders
-// $laravel-border-color: darken($body-bg, 10%);
-// $list-group-border: $laravel-border-color;
-// $navbar-default-border: $laravel-border-color;
-// $panel-default-border: $laravel-border-color;
-// $panel-inner-border: $laravel-border-color;
-
 // Brands
-// $brand-primary: #3097D1;
 $brand-primary: #7eb2d9;
 $brand-info: #8eb4cb;
 $brand-success: #2ab27b;
@@ -20,26 +9,11 @@ $brand-base-color: #bdbdbd;
 $body-bg-color: #f5f8fa;
 
 // Typography
-$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
-// $font-family-sans-serif: "Raleway", sans-serif;
 $font-family-sans-serif: "Raleway", "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;;
 $font-size-base: 14px;
 $line-height-base: 1.6;
 $text-color: #636b6f;
 
-// Navbar
-$navbar-default-bg: #fff;
-
-// Buttons
-$btn-default-color: $text-color;
-
-// Inputs
-$input-border: lighten($text-color, 40%);
-$input-border-focus: lighten($brand-primary, 25%);
-$input-color-placeholder: lighten($text-color, 30%);
-
-// Panels
-$panel-default-heading-bg: #fff;
 
 /*
  |----------------------------------------------------------------------------
@@ -62,3 +36,43 @@ $panel-default-heading-bg: #fff;
 	justify-content: center;
 	align-items: center;
 }
+
+/*
+ |----------------------------------------------------------------------------
+ | COLORS
+ |----------------------------------------------------------------------------
+ |
+ | Base: https://material.io/guidelines/style/color.html
+ | Brightness: 100
+ |
+ | How to use in other SCSS:
+ |   .[classname] {
+ |      color: $yellow;
+ |    }
+ */
+$red        : #EF9A9A;
+$pink       : #F48FB1;
+$purple     : #CE93D8;
+$deep-purple: #B39DDB;
+$indigo     : #9FA8DA;
+$blue       : #90CAF9;
+$light-blue : #81D4FA;
+$cyan       : #80DEEA;
+$teal       : #A5D6A7;
+$green      : #C5E1A5;
+$light-green: #E6EE9C;
+$lime       : #F0F4C3;
+$yellow     : #FFF59D;
+$amber      : #FFE082;
+$orange     : #FFCC80;
+$deep-orange: #FFAB91;
+$brown      : #BCAAA4;
+$gray       : #EEEEEE;
+$blue-gray  : #B0BEC5;
+
+$color-names: red, pink, purple, deep-purple, indigo, blue,
+              light-blue, cyan, teal, green, light-green, lime,
+              yellow, amber, orange, deep-orange, brown, gray, blue-gray;
+$color-values: $red, $pink, $purple, $deep-purple, $indigo, $blue,
+               $light-blue, $cyan, $teal, $green, $light-green, $lime,
+               $yellow, $amber, $orange, $deep-orange, $brown, $gray, $blue-gray;

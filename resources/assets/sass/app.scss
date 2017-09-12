@@ -52,3 +52,17 @@ input[placeholder]::-webkit-input-placeholder,
 button {
 	font-family: "Raleway", "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
 }
+
+/* 基本色の数だけ、クラスとCSSカスタムプロパティを定義 */
+@each $name in $color-names {
+  $index: index($color-names, $name);
+  .fc-#{$name} {
+    color: nth($color-values, $index);
+  }
+  .bc-#{$name} {
+    background-color: nth($color-values, $index);
+  }
+  :root {
+    --#{$name}: nth($color-values, $index);
+  }
+}

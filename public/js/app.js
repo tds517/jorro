@@ -10647,7 +10647,19 @@ var getValueByPath = exports.getValueByPath = function getValueByPath(object, pr
 };
 
 /***/ }),
-/* 8 */,
+/* 8 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony default export */ __webpack_exports__["a"] = ({
+  about: { path: 'about', icon: 'fa-commenting-o' },
+  illusts: { path: 'illusts', icon: 'fa-picture-o' },
+  comics: { path: 'comics', icon: 'fa-book' },
+  photos: { path: 'photos', icon: 'fa-camera-retro' },
+  apps: { path: 'apps', icon: 'fa-apple' }
+});
+
+/***/ }),
 /* 9 */
 /***/ (function(module, exports) {
 
@@ -15970,7 +15982,7 @@ function mergeFn (a, b) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_settings__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_settings__ = __webpack_require__(8);
 //
 //
 //
@@ -16101,7 +16113,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__models_demodata_notices__ = __webpack_require__(87);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__settings__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__settings__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_headline_One_Baloon__ = __webpack_require__(155);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__components_headline_One_Baloon___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2__components_headline_One_Baloon__);
 //
 //
 //
@@ -16195,6 +16209,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+
+
 
 
 
@@ -16214,8 +16230,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       favorites: [],
       hisotries: [],
       categories: {
-        notice: { title: 'お知らせ', icon: 'fa-bell-o' },
-        favorite: { title: 'お気にいり', icon: 'fa-heart-o' },
+        notice: { title: 'お知らせ', icon: 'fa-bell' },
+        favorite: { title: 'お気にいり', icon: 'fa-heart' },
         top_rank: { title: '人気ランキング', icon: 'fa-trophy' }
       }
     };
@@ -16232,7 +16248,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     }
   },
-  computed: {}
+  components: {
+    H1Baloon: __WEBPACK_IMPORTED_MODULE_2__components_headline_One_Baloon___default.a
+  }
 });
 
 /***/ }),
@@ -16241,7 +16259,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__settings__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__settings__ = __webpack_require__(8);
 //
 //
 //
@@ -16376,12 +16394,6 @@ if (token) {
   message: '英数字テストです。1234567890ewaofijewo ie36784',
   thumbnail_path: 'img/illusts/kazuma4.jpg',
   date: '2017/09/09'
-}, {
-  id: 5,
-  category: 'apps',
-  message: '英数字テストです。',
-  thumbnail_path: 'img/illusts/kazuma4.jpg',
-  date: '2017/09/09'
 }]);
 
 /***/ }),
@@ -16389,7 +16401,7 @@ if (token) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_settings__ = __webpack_require__(153);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_settings__ = __webpack_require__(8);
 
 /* harmony default export */ __webpack_exports__["a"] = ([{ path: '/', component: __webpack_require__(127) }, { path: '/' + __WEBPACK_IMPORTED_MODULE_0__pages_settings__["a" /* default */].about.path, component: __webpack_require__(124) }, { path: '/' + __WEBPACK_IMPORTED_MODULE_0__pages_settings__["a" /* default */].illusts.path, component: __webpack_require__(126) }, { path: '/' + __WEBPACK_IMPORTED_MODULE_0__pages_settings__["a" /* default */].comics.path, component: __webpack_require__(129) }, { path: '/' + __WEBPACK_IMPORTED_MODULE_0__pages_settings__["a" /* default */].photos.path, component: __webpack_require__(130) }, { path: '/' + __WEBPACK_IMPORTED_MODULE_0__pages_settings__["a" /* default */].apps.path, component: __webpack_require__(125) }]);
 
@@ -18788,21 +18800,21 @@ exports.push([module.i, ".el-form-item__content:before, .el-form-item__content:a
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(9)();
-exports.push([module.i, "/*\n |----------------------------------------------------------------------------\n | METHODS\n |----------------------------------------------------------------------------\n |\n | How to use in other SCSS:\n |   .[classname] { @extend %[methodname] }\n |\n */\n.notice .card[data-v-245260f1], .favorite .card[data-v-245260f1] {\n  min-width: 120px;\n}\n.notice .card a[data-v-245260f1], .favorite .card a[data-v-245260f1] {\n    text-decoration: none;\n}\n.notice .content[data-v-245260f1], .favorite .content[data-v-245260f1] {\n  background-color: #fff;\n  padding: 6px 4px 4px;\n  z-index: 2;\n}\n.notice .message[data-v-245260f1], .favorite .message[data-v-245260f1] {\n  color: #636b6f;\n  font-size: .75em;\n}\n.notice .time[data-v-245260f1], .favorite .time[data-v-245260f1] {\n  color: #999;\n  font-size: .6em;\n}\n.notice .bottom[data-v-245260f1], .favorite .bottom[data-v-245260f1] {\n  text-align: right;\n}\n.notice .image-wrapper[data-v-245260f1], .favorite .image-wrapper[data-v-245260f1] {\n  -webkit-filter: contrast(120%) sepia(50%);\n          filter: contrast(120%) sepia(50%);\n}\n.notice .image[data-v-245260f1], .favorite .image[data-v-245260f1] {\n  display: block;\n  -webkit-filter: blur(3px);\n          filter: blur(3px);\n  width: 100%;\n}\n.card__header[data-v-245260f1] {\n  background-color: rgba(255, 255, 255, 0.3);\n  color: #fff;\n  padding: 4px;\n  position: absolute;\n  radius: 8px;\n  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);\n  width: 100%;\n  z-index: 1;\n}\n", ""]);
+exports.push([module.i, "/*\n |----------------------------------------------------------------------------\n | METHODS\n |----------------------------------------------------------------------------\n |\n | How to use in other SCSS:\n |   .[classname] { @extend %[methodname] }\n |\n */\n/*\n |----------------------------------------------------------------------------\n | COLORS\n |----------------------------------------------------------------------------\n |\n | Base: https://material.io/guidelines/style/color.html\n | Brightness: 100\n |\n | How to use in other SCSS:\n |   .[classname] {\n |      color: $yellow;\n |    }\n */\n.notice h1[data-v-245260f1], .favorite h1[data-v-245260f1] {\n  color: #bdbdbd;\n  font-weight: normal;\n}\n.notice .card[data-v-245260f1], .favorite .card[data-v-245260f1] {\n  min-width: 120px;\n}\n.notice .card a[data-v-245260f1], .favorite .card a[data-v-245260f1] {\n    text-decoration: none;\n}\n.notice .content[data-v-245260f1], .favorite .content[data-v-245260f1] {\n  background-color: #fff;\n  padding: 6px 4px 4px;\n  z-index: 2;\n}\n.notice .message[data-v-245260f1], .favorite .message[data-v-245260f1] {\n  color: #636b6f;\n  font-size: .75em;\n}\n.notice .time[data-v-245260f1], .favorite .time[data-v-245260f1] {\n  color: #999;\n  font-size: .6em;\n}\n.notice .bottom[data-v-245260f1], .favorite .bottom[data-v-245260f1] {\n  text-align: right;\n}\n.notice .image-wrapper[data-v-245260f1], .favorite .image-wrapper[data-v-245260f1] {\n  -webkit-filter: contrast(120%) sepia(50%);\n          filter: contrast(120%) sepia(50%);\n}\n.notice .image[data-v-245260f1], .favorite .image[data-v-245260f1] {\n  display: block;\n  -webkit-filter: blur(3px);\n          filter: blur(3px);\n  width: 100%;\n}\n.card__header[data-v-245260f1] {\n  background-color: rgba(255, 255, 255, 0.3);\n  color: #fff;\n  padding: 4px;\n  position: absolute;\n  radius: 8px;\n  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);\n  width: 100%;\n  z-index: 1;\n}\n", ""]);
 
 /***/ }),
 /* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(9)();
-exports.push([module.i, "/*\n |----------------------------------------------------------------------------\n | METHODS\n |----------------------------------------------------------------------------\n |\n | How to use in other SCSS:\n |   .[classname] { @extend %[methodname] }\n |\n */\n.navbar ul[data-v-d5ba3e50] {\n  margin: 0;\n  padding: 0;\n}\n.navbar li[data-v-d5ba3e50] {\n  display: inline-block;\n  float: left;\n  list-style-type: none;\n}\n.navbar a[data-v-d5ba3e50] {\n  display: block;\n  text-decoration: none;\n}\nnav ul[data-v-d5ba3e50] {\n  margin-top: 8px;\n}\nnav li[data-v-d5ba3e50] {\n  color: #bdbdbd;\n  font-size: .75em;\n  margin-right: 16px;\n  text-align: center;\n}\nnav a[data-v-d5ba3e50] {\n  background-color: #f6f6f6;\n  border: 1px solid #d7d7d7;\n  border-radius: 3px;\n  color: #bdbdbd;\n  display: block;\n  margin-bottom: 8px;\n  opacity: .999;\n  padding: 16px;\n  position: relative;\n  transition: all .3s linear;\n}\nnav a[data-v-d5ba3e50]:before, nav a[data-v-d5ba3e50]:after {\n    content: '';\n    border-color: #7eb2d9;\n    border-style: solid;\n    position: absolute;\n    z-index: 5;\n    border-radius: 3px;\n    box-sizing: content-box;\n    transition: all .3s linear;\n}\nnav a[data-v-d5ba3e50]:before {\n    width: 0;\n    height: 100%;\n    border-width: 1px 0 1px 0;\n    top: -1px;\n    left: 0;\n    transition-delay: 0.05s;\n}\nnav a[data-v-d5ba3e50]:after {\n    width: 100%;\n    height: 0;\n    border-width: 0 1px 0 1px;\n    top: 0;\n    left: -1px;\n}\nnav a[data-v-d5ba3e50]:hover {\n    background-color: transparent;\n    color: #7eb2d9;\n}\nnav a[data-v-d5ba3e50]:hover:before {\n      width: 100%;\n}\nnav a[data-v-d5ba3e50]:hover:after {\n      height: 100%;\n}\nnav a i[data-v-d5ba3e50] {\n    font-size: 2.5em;\n}\n", ""]);
+exports.push([module.i, "/*\n |----------------------------------------------------------------------------\n | METHODS\n |----------------------------------------------------------------------------\n |\n | How to use in other SCSS:\n |   .[classname] { @extend %[methodname] }\n |\n */\n/*\n |----------------------------------------------------------------------------\n | COLORS\n |----------------------------------------------------------------------------\n |\n | Base: https://material.io/guidelines/style/color.html\n | Brightness: 100\n |\n | How to use in other SCSS:\n |   .[classname] {\n |      color: $yellow;\n |    }\n */\n.navbar ul[data-v-d5ba3e50] {\n  margin: 0;\n  padding: 0;\n}\n.navbar li[data-v-d5ba3e50] {\n  display: inline-block;\n  float: left;\n  list-style-type: none;\n}\n.navbar a[data-v-d5ba3e50] {\n  display: block;\n  text-decoration: none;\n}\nnav ul[data-v-d5ba3e50] {\n  margin-top: 8px;\n}\nnav li[data-v-d5ba3e50] {\n  color: #bdbdbd;\n  font-size: .75em;\n  margin-right: 16px;\n  text-align: center;\n}\nnav a[data-v-d5ba3e50] {\n  background-color: #f6f6f6;\n  border: 1px solid #d7d7d7;\n  border-radius: 3px;\n  color: #bdbdbd;\n  display: block;\n  margin-bottom: 8px;\n  opacity: .999;\n  padding: 16px;\n  position: relative;\n  transition: all .3s linear;\n}\nnav a[data-v-d5ba3e50]:before, nav a[data-v-d5ba3e50]:after {\n    content: '';\n    border-color: #7eb2d9;\n    border-style: solid;\n    position: absolute;\n    z-index: 5;\n    border-radius: 3px;\n    box-sizing: content-box;\n    transition: all .3s linear;\n}\nnav a[data-v-d5ba3e50]:before {\n    width: 0;\n    height: 100%;\n    border-width: 1px 0 1px 0;\n    top: -1px;\n    left: 0;\n    transition-delay: 0.05s;\n}\nnav a[data-v-d5ba3e50]:after {\n    width: 100%;\n    height: 0;\n    border-width: 0 1px 0 1px;\n    top: 0;\n    left: -1px;\n}\nnav a[data-v-d5ba3e50]:hover {\n    background-color: transparent;\n    color: #7eb2d9;\n}\nnav a[data-v-d5ba3e50]:hover:before {\n      width: 100%;\n}\nnav a[data-v-d5ba3e50]:hover:after {\n      height: 100%;\n}\nnav a i[data-v-d5ba3e50] {\n    font-size: 2.5em;\n}\n", ""]);
 
 /***/ }),
 /* 93 */
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(9)();
-exports.push([module.i, "/*\n |----------------------------------------------------------------------------\n | METHODS\n |----------------------------------------------------------------------------\n |\n | How to use in other SCSS:\n |   .[classname] { @extend %[methodname] }\n |\n */\n.navbar ul[data-v-f63c9ca0] {\n  margin: 0;\n  padding: 0;\n}\n.navbar li[data-v-f63c9ca0] {\n  display: inline-block;\n  float: left;\n  list-style-type: none;\n}\n.navbar a[data-v-f63c9ca0] {\n  display: block;\n  text-decoration: none;\n}\n", ""]);
+exports.push([module.i, "/*\n |----------------------------------------------------------------------------\n | METHODS\n |----------------------------------------------------------------------------\n |\n | How to use in other SCSS:\n |   .[classname] { @extend %[methodname] }\n |\n */\n/*\n |----------------------------------------------------------------------------\n | COLORS\n |----------------------------------------------------------------------------\n |\n | Base: https://material.io/guidelines/style/color.html\n | Brightness: 100\n |\n | How to use in other SCSS:\n |   .[classname] {\n |      color: $yellow;\n |    }\n */\n.navbar ul[data-v-f63c9ca0] {\n  margin: 0;\n  padding: 0;\n}\n.navbar li[data-v-f63c9ca0] {\n  display: inline-block;\n  float: left;\n  list-style-type: none;\n}\n.navbar a[data-v-f63c9ca0] {\n  display: block;\n  text-decoration: none;\n}\n", ""]);
 
 /***/ }),
 /* 94 */
@@ -86482,9 +86494,12 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }
   }, [_c('section', {
     staticClass: "notice"
-  }, [_c('h1', [_c('i', {
-    class: ['fa fa-fw', _vm.categories.notice.icon]
-  }), _vm._v("\n        " + _vm._s(_vm.categories.notice.title) + "\n      ")]), _vm._v(" "), _c('el-row', _vm._l((_vm.notices), function(item, index) {
+  }, [_c('h1-baloon', {
+    attrs: {
+      "icon-id": _vm.categories.notice.icon,
+      "color": "red"
+    }
+  }, [_vm._v("\n        " + _vm._s(_vm.categories.notice.title) + "\n      ")]), _vm._v(" "), _c('el-row', _vm._l((_vm.notices), function(item, index) {
     return _c('el-col', {
       key: item,
       staticClass: "card",
@@ -89405,13 +89420,137 @@ module.exports = __webpack_require__(36);
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony default export */ __webpack_exports__["a"] = ({
-  about: { path: 'about', icon: 'fa-commenting-o' },
-  illusts: { path: 'illusts', icon: 'fa-picture-o' },
-  comics: { path: 'comics', icon: 'fa-book' },
-  photos: { path: 'photos', icon: 'fa-camera-retro' },
-  apps: { path: 'apps', icon: 'fa-apple' }
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    iconId: String,
+    color: {
+      type: String,
+      default: '#bdbdbd'
+    }
+
+  },
+  data: function data() {
+    return {};
+  },
+  mounted: function mounted() {
+    console.log(this.$el);
+    console.log(this.$el.attributes);
+    // カスタムプロパティの取得方法
+    var styles = getComputedStyle(document.documentElement);
+    var value = String(styles.getPropertyValue('--' + this.color)).trim();
+    console.log(value);
+    var color = this.color;
+    // スコープのIDをattributesから取得し、スタイルを強引に追加する。
+    var attributes = this.$el.attributes;
+    for (var i = 0; i < attributes.length; i++) {
+      console.log(attributes[i]);
+      $('head').append('<style>h1[' + attributes[i].name + ']:after {border-left: 12px solid var(--' + color + ');}');
+    }
+  },
+
+  computed: {
+    getBgc: function getBgc() {
+      return 'bc-' + this.color;
+    }
+  }
 });
+
+/***/ }),
+/* 154 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(9)();
+exports.push([module.i, "\n@charset \"UTF-8\";\nh1[data-v-12245286] {\n  position: relative;\n  padding-left: 45px;\n}\nh1 i[data-v-12245286] {\n  position: absolute;\n  color: white;\n  font-weight: normal;\n  font-size: .9em;\n  border-radius: 50%;\n  left: 0;\n  width: 30px;\n  height: 30px;\n  line-height: 30px;\n  text-align: center;\n  top: 50%;\n  -webkit-transform: translateY(-50%);\n          transform: translateY(-50%);\n}\nh1[data-v-12245286]:after {\n  /*吹き出しのちょこんと出た部分*/\n  content: '';\n  display: block;\n  position: absolute;\n  left: 25.5px;\n  height: 0;\n  width: 0;\n  border-top: 7px solid transparent;\n  border-bottom: 7px solid transparent;\n  top: 50%;\n  -webkit-transform: translateY(-50%);\n          transform: translateY(-50%);\n  z-index: -1;\n}\n", ""]);
+
+/***/ }),
+/* 155 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(157)
+
+var Component = __webpack_require__(4)(
+  /* script */
+  __webpack_require__(153),
+  /* template */
+  __webpack_require__(156),
+  /* scopeId */
+  "data-v-12245286",
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/tds/src/jorro-epn/resources/assets/js/components/headline/One_Baloon.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] One_Baloon.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-12245286", Component.options)
+  } else {
+    hotAPI.reload("data-v-12245286", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 156 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('h1', [_c('i', {
+    class: ['fa fa-fw', _vm.iconId, _vm.getBgc]
+  }), _vm._v(" "), _vm._t("default")], 2)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-12245286", module.exports)
+  }
+}
+
+/***/ }),
+/* 157 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(154);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(19)("38481562", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-12245286\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./One_Baloon.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-12245286\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../../node_modules/sass-loader/lib/loader.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./One_Baloon.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);
