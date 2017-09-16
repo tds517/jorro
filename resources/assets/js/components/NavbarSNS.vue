@@ -21,32 +21,32 @@
 </template>
 
 <script>
-  export default {
-    mounted() {
-      console.log('NavbarSNS mounted')
-    }
+export default {
+  mounted() {
+    console.log('NavbarSNS mounted')
   }
+}
 </script>
 
 <style lang="scss" scoped>
-  @import "../../sass/variables";
+@import 'resources/assets/sass/variables';
 
-  .navbar {
-    ul {
-      margin: 0;
-      padding: 0;
-    }
-
-    li {
-      display: inline-block;
-      float: left;
-      list-style-type: none;
-    }
-
-    a {
-      display: block;
-      text-decoration: none;
-    }
+.navbar {
+  ul {
+    margin: 0;
+    padding: 0;
   }
+
+  li {
+    display: inline-block;
+    float: left;
+    list-style-type: none;
+  }
+
+  a {
+    display: block;
+    text-decoration: none;
+  }
+}
 
 </style>

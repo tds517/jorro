@@ -26,7 +26,7 @@ export default {
 
 <style lang="scss" scoped>
 
-@import '../../../sass/variables';
+@import 'resources/assets/sass/variables';
 
 $size: 2em;
 

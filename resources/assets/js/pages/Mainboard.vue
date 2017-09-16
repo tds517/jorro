@@ -53,10 +53,6 @@ import pages from './_settings'
 import H1Circle from '../components/headline/One_Circle'
 import MainboardCards from '../components/MainboardCards'
 
-// TODO: いずれは、お知らせ、お気に入り、履歴を一つのコンポーネントとしたい。
-// タイトルと、データと、オプションをプロパティとして、動的に。
-// TODO: コンテンツを色々変えてもいいかもしれない。
-// 例えば、人気コンテンツや、最近見たもの、最近人気なもの、おすすめなど
 export default {
     mounted() {
       // TODO: データの取得
@@ -84,12 +80,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import "../../sass/variables";
+@import "resources/assets/sass/variables";
 
-  .notice, .favorite, .top_rank {
-    h1 > span {
-      // text-align: right;
-    }
+.notice, .favorite, .top_rank {
+  h1 > span {
+    // text-align: right;
   }
+}
 
 </style>

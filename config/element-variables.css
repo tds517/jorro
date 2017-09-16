@@ -13,10 +13,10 @@
   -------------------------- */
   --color-primary: #7eb2d9;
 
-  --color-success: #13ce66;
-  --color-warning: #f7ba2a;
-  --color-danger: #ff4949;
-  --color-info: #50bfff;
+  --color-success: #2ab27b;
+  --color-warning: #cbb956;
+  --color-danger: #bf5329;
+  --color-info: #8eb4cb;
 
   --color-secondary: color(var(--color-primary) s(99%) l(*0.9));
   --color-white: #fff;

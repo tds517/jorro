@@ -35,7 +35,7 @@
       </el-button>
 
       <el-dialog title="History" :visible.sync="moreDialogView">
-        <data-table :data="items"></data-table>
+        <history-table :data="items"></history-table>
       </el-dialog>
     </el-col>
   </el-row>
@@ -43,7 +43,7 @@
 
 <script>
 
-import DataTable from './DataTable'
+import HistoryTable from './table/History'
 
 export default {
   props: {
@@ -82,7 +82,7 @@ export default {
     }
   },
   components: {
-    DataTable
+    HistoryTable
   }
 }
 
