@@ -22,7 +22,7 @@ body {
 #main-header {
   background: $body-bg-color;
   border-bottom: 1px solid darken($body-bg-color, 5);
-  display: fixed;
+  border-top: 6px solid $brand-primary;
 
   h1 {
     #logo {

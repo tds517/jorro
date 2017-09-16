@@ -41,8 +41,8 @@ const vm = new Vue({
   methods: {
     mounted: function() {
       // ヘッダーの高さを測り、メインコンテンツを引き下げる
-      var total = $('#main-header').outerHeight();
-      $('#main-cnt').css('padding-top', total);
+      // var total = $('#main-header').outerHeight();
+      // $('#main-cnt').css('padding-top', total);
     }
   },
   computed: {

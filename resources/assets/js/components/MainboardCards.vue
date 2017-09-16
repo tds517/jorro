@@ -28,15 +28,22 @@
       </a>
     </el-col>
     <el-col :span="2" :offset="1" class="more" v-if="enabledMore">
-      <el-button type="primary" size="small" class="more-button">
+      <el-button type="primary" size="small" class="more-button"
+        @click="moreDialogView = true"
+      >
         <i class="fa fa-fw fa-angle-double-right"></i>
       </el-button>
+
+      <el-dialog title="History" :visible.sync="moreDialogView">
+        <data-table :data="items"></data-table>
+      </el-dialog>
     </el-col>
   </el-row>
 </template>
 
 <script>
 
+import DataTable from './DataTable'
 
 export default {
   props: {
@@ -47,6 +54,11 @@ export default {
       validator: function(val) {
         return val > 0
       }
+    }
+  },
+  data() {
+    return {
+      moreDialogView: false
     }
   },
   methods: {
@@ -69,6 +81,9 @@ export default {
       return this.items.length > this.max
     }
   },
+  components: {
+    DataTable
+  }
 }
 
 </script>

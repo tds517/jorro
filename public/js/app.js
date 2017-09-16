@@ -13796,8 +13796,8 @@ var vm = new Vue({
   methods: {
     mounted: function mounted() {
       // ヘッダーの高さを測り、メインコンテンツを引き下げる
-      var total = $('#main-header').outerHeight();
-      $('#main-cnt').css('padding-top', total);
+      // var total = $('#main-header').outerHeight();
+      // $('#main-cnt').css('padding-top', total);
     }
   },
   computed: {}
@@ -15982,6 +15982,8 @@ function mergeFn (a, b) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__DataTable__ = __webpack_require__(167);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__DataTable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__DataTable__);
 //
 //
 //
@@ -16019,6 +16021,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -16032,6 +16042,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
       }
     }
   },
+  data: function data() {
+    return {
+      moreDialogView: false
+    };
+  },
+
   methods: {
     doMaskImage: function doMaskImage(isMask, el) {
       // a領域内の子要素img
@@ -16051,6 +16067,9 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     enabledMore: function enabledMore() {
       return this.items.length > this.max;
     }
+  },
+  components: {
+    DataTable: __WEBPACK_IMPORTED_MODULE_0__DataTable___default.a
   }
 });
 
@@ -86783,10 +86802,29 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     attrs: {
       "type": "primary",
       "size": "small"
+    },
+    on: {
+      "click": function($event) {
+        _vm.moreDialogView = true
+      }
     }
   }, [_c('i', {
     staticClass: "fa fa-fw fa-angle-double-right"
-  })])], 1) : _vm._e()], 2)
+  })]), _vm._v(" "), _c('el-dialog', {
+    attrs: {
+      "title": "History",
+      "visible": _vm.moreDialogView
+    },
+    on: {
+      "update:visible": function($event) {
+        _vm.moreDialogView = $event
+      }
+    }
+  }, [_c('data-table', {
+    attrs: {
+      "data": _vm.items
+    }
+  })], 1)], 1) : _vm._e()], 2)
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
@@ -89669,6 +89707,169 @@ module.exports = function(module) {
 __webpack_require__(35);
 module.exports = __webpack_require__(36);
 
+
+/***/ }),
+/* 159 */,
+/* 160 */,
+/* 161 */,
+/* 162 */,
+/* 163 */,
+/* 164 */,
+/* 165 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_PagesIconRender__ = __webpack_require__(135);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__pages_PagesIconRender___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__pages_PagesIconRender__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    data: Array
+  },
+  mounted: function mounted() {
+    console.log(__WEBPACK_IMPORTED_MODULE_0__pages_PagesIconRender___default.a);
+  },
+
+  methods: {
+    getIconId: function getIconId(category) {
+      console.log(category);
+      return __WEBPACK_IMPORTED_MODULE_0__pages_PagesIconRender___default.a.computed.getIconId(category);
+    }
+  }
+});
+
+/***/ }),
+/* 166 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(5)();
+exports.push([module.i, "/*\n |----------------------------------------------------------------------------\n | METHODS\n |----------------------------------------------------------------------------\n |\n | How to use in other SCSS:\n |   .[classname] { @extend %[methodname] }\n |\n */\n/*\n |----------------------------------------------------------------------------\n | COLORS\n |----------------------------------------------------------------------------\n |\n | Base: https://material.io/guidelines/style/color.html\n | Brightness: 100\n |\n | How to use in other SCSS:\n |   .[classname] {\n |      color: $yellow;\n |    }\n */\n", ""]);
+
+/***/ }),
+/* 167 */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+/* styles */
+__webpack_require__(169)
+
+var Component = __webpack_require__(3)(
+  /* script */
+  __webpack_require__(165),
+  /* template */
+  __webpack_require__(168),
+  /* scopeId */
+  "data-v-142102a8",
+  /* cssModules */
+  null
+)
+Component.options.__file = "/Users/tds/src/jorro-epn/resources/assets/js/components/DataTable.vue"
+if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key !== "__esModule"})) {console.error("named exports are not supported in *.vue files.")}
+if (Component.options.functional) {console.error("[vue-loader] DataTable.vue: functional components are not supported with templates, they should use render functions.")}
+
+/* hot reload */
+if (false) {(function () {
+  var hotAPI = require("vue-hot-reload-api")
+  hotAPI.install(require("vue"), false)
+  if (!hotAPI.compatible) return
+  module.hot.accept()
+  if (!module.hot.data) {
+    hotAPI.createRecord("data-v-142102a8", Component.options)
+  } else {
+    hotAPI.reload("data-v-142102a8", Component.options)
+  }
+})()}
+
+module.exports = Component.exports
+
+
+/***/ }),
+/* 168 */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('el-table', {
+    attrs: {
+      "data": _vm.data
+    }
+  }, [_c('el-table-column', {
+    attrs: {
+      "property": "category",
+      "width": "40"
+    },
+    scopedSlots: _vm._u([{
+      key: "default",
+      fn: function(scope) {
+        return [_c('i', {
+          staticClass: "el-icon-edit"
+        })]
+      }
+    }])
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "Date",
+      "property": "date",
+      "width": "120"
+    }
+  }), _vm._v(" "), _c('el-table-column', {
+    attrs: {
+      "label": "Message",
+      "property": "message"
+    }
+  })], 1)
+},staticRenderFns: []}
+module.exports.render._withStripped = true
+if (false) {
+  module.hot.accept()
+  if (module.hot.data) {
+     require("vue-hot-reload-api").rerender("data-v-142102a8", module.exports)
+  }
+}
+
+/***/ }),
+/* 169 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(166);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(9)("636b3745", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-142102a8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./DataTable.vue", function() {
+     var newContent = require("!!../../../../node_modules/css-loader/index.js!../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"id\":\"data-v-142102a8\",\"scoped\":true,\"hasInlineConfig\":true}!../../../../node_modules/sass-loader/lib/loader.js!../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./DataTable.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
 
 /***/ })
 /******/ ]);
