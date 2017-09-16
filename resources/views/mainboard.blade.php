@@ -20,7 +20,7 @@
               :md="{offset: 2, span: 2}">
         <h1>
           <router-link to="/">
-            <img id="logo" src="img/logo-gray.png">
+            <img id="logo" src="img/logo.png">
           </router-link>
         </h1>
       </el-col>
@@ -30,14 +30,14 @@
       </el-col>
 
       <el-col :xs="4" :sm="4" :md="4">
-        <navbar-sns class="header__navbar-sns"></navbar-sns>
+        &nbsp;
       </el-col>
     </el-row>
   </header>
 
-  <div id="main-cnt">
+  <main id="main-cnt">
     <router-view></router-view>
-  </div>
+  </main>
 </div>
 
 <script src="js/app.js"></script>

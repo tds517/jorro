@@ -1,5 +1,7 @@
 <template>
-  <p>Hello About World</p>
+  <div>
+    <p>Hello About World</p>
+  </div>
 </template>
 
 <script>
@@ -9,3 +11,6 @@
         }
     }
 </script>
+
+<style lang="scss" scoped>
+</style>
