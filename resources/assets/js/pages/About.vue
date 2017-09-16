@@ -1,18 +1,32 @@
 <template>
-  <div>
-    <p>Hello About World</p>
-    <el-button type="primary">TEST</el-button>
-    <el-button type="info">TEST</el-button>
-    <el-button type="success">TEST</el-button>
-    <el-button type="warning">TEST</el-button>
-    <el-button type="danger">TEST</el-button>
-  </div>
+  <el-row>
+    <el-col :xs="1"
+            :sm="2"
+            :md="8">
+      <div>&nbsp;</div>
+    </el-col>
+    <el-col :xs="22"
+            :sm="20"
+            :md="15">
+      <el-button @click="getCurrentViewport">get</el-button>
+    </el-col>
+    <el-col :xs="1"
+            :sm="2"
+            :md="1">
+      <div>&nbsp;</div>
+    </el-col>
+  </el-row>
 </template>
 
 <script>
 export default {
   mounted() {
-      console.log('Component mounted.')
+  },
+  methods: {
+    getCurrentViewport() {
+      console.log(this.$root)
+      console.log(this.$root.$viewportState.label)
+    }
   }
 }
 </script>

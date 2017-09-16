@@ -58,6 +58,7 @@ export default {
   },
   data() {
     return {
+      // >>ボタン押下のダイアログ表示
       moreDialogView: false
     }
   },
@@ -74,9 +75,19 @@ export default {
     }
   },
   computed: {
+    /**
+     * アイテム数制限
+     *
+     * @return {Array} [アイテム表示最大数までのアイテムデータ]
+     */
     limitedItems() {
       return this.enabledMore ? this.items.slice(0, this.max) : this.items
     },
+    /**
+     * More表示有効
+     *
+     * @return {Boolean} true: アイテム数が表示最大数より多い
+     */
     enabledMore() {
       return this.items.length > this.max
     }
@@ -89,7 +100,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../sass/variables";
+@import "resources/assets/sass/variables";
 
 $card-height: 200px;
 $card-width: 120px;
@@ -134,6 +145,10 @@ $card-width: 120px;
   width: 100%;
 }
 
+/*
+  el-cardには、ヘッダー指定も可能だが、画像にかぶせたかったため、
+  absoluteで対応したのが本クラス。
+ */
 .card__header {
   background-color: rgba(255, 255, 255, .5);
   box-shadow: 0 2px 4px rgba(255, 255, 255, .75);
@@ -149,6 +164,5 @@ $card-width: 120px;
 .more-button {
   font-size: 1.2em;
   padding: 2px 4px;
-  transition: all .5s ease;
 }
 </style>

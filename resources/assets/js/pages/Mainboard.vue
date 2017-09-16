@@ -52,6 +52,10 @@ import pages from './_settings'
 
 import H1Circle from '../components/headline/One_Circle'
 import MainboardCards from '../components/MainboardCards'
+const components = {
+  H1Circle,
+  MainboardCards
+}
 
 export default {
     mounted() {
@@ -72,10 +76,7 @@ export default {
     },
     methods: {
     },
-    components: {
-      H1Circle,
-      MainboardCards
-    }
+    components: components
 }
 </script>
 

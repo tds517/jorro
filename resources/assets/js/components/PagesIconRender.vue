@@ -1,9 +1,9 @@
 <template>
-    <i :class="['fa fa-fw', getIconId]"></i>
+  <i :class="['fa fa-fw', getIconId]"></i>
 </template>
 
 <script>
-import pages from './_settings'
+import pages from '../pages/_settings'
 
 export default {
   props: {
