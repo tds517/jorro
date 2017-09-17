@@ -1,44 +1,38 @@
 <template>
   <el-row>
-    <el-col :xs="1"
-            :sm="2"
-            :md="3">
+    <el-col :xs="1" :sm="2" :md="3">
       <div>&nbsp;</div>
     </el-col>
 
-    <el-col :xs="22"
-            :sm="20"
-            :md="18">
+    <el-col :xs="22" :sm="20" :md="18">
 
-      <section class="notice">
+      <div>
         <h1-circle :icon-id="categories.notice.icon" color="amber">
           {{ categories.notice.title }}
         </h1-circle>
 
         <mainboard-cards :items="notices" :max="2"></mainboard-cards>
-      </section>
+      </div>
 
-      <section class="favorite">
+      <div>
         <h1-circle :icon-id="categories.favorite.icon" color="pink">
           {{ categories.favorite.title }}
         </h1-circle>
 
         <mainboard-cards :items="notices" :max="1"></mainboard-cards>
-      </section>
+      </div>
 
-      <section class="top_rank">
+      <div>
         <h1-circle :icon-id="categories.top_rank.icon" color="light-blue">
           {{ categories.top_rank.title }}
         </h1-circle>
 
         <mainboard-cards :items="notices" :max="4"></mainboard-cards>
-      </section>
+      </div>
 
     </el-col>
 
-    <el-col :xs="1"
-            :sm="2"
-            :md="3">
+    <el-col :xs="1" :sm="2" :md="3">
       <div>&nbsp;</div>
     </el-col>
 
@@ -82,11 +76,5 @@ export default {
 
 <style lang="scss" scoped>
 @import "resources/assets/sass/variables";
-
-.notice, .favorite, .top_rank {
-  h1 > span {
-    // text-align: right;
-  }
-}
 
 </style>

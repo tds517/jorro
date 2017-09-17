@@ -13804,14 +13804,19 @@ Vue.component('pages-icon', __webpack_require__(134));
 var vm = new Vue({
   router: router,
   el: '#app',
-  data: {},
+  data: {
+    fixedHeight: 0
+  },
   mounted: function mounted() {
     // ヘッダーの高さを測り、メインコンテンツを引き下げる
-    // var total = $('#main-header').outerHeight();
-    // $('#main-cnt').css('padding-top', total);
+    this.fixedHeight = this.getHeaderHight();
   },
   computed: {},
-  methods: {},
+  methods: {
+    getHeaderHight: function getHeaderHight() {
+      return $('#main-header').outerHeight();
+    }
+  },
   watch: {
     '$viewportState.label': function $viewportStateLabel() {
       // this.viewport = this.$viewportState.label
@@ -16226,6 +16231,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__settings__ = __webpack_require__(10);
 //
 //
 //
@@ -16258,18 +16264,55 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
+
+
+var defaultTop = 8;
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {},
   data: function data() {
-    return {};
+    return {
+      sideMenuTop: defaultTop,
+      articles: [{
+        title: 'CONTENTS',
+        items: this.initSortPages()
+      }, {
+        title: 'JORRO',
+        items: [{ iconId: 'fa-globe', label: 'site' }, { iconId: 'fa-user', label: 'author' }]
+      }],
+      itemIndex: 0
+    };
   },
 
-  methods: {}
+  methods: {
+    keepSideMenuPosition: function keepSideMenuPosition() {
+      this.sideMenuTop = this.$viewportState.scrollY + defaultTop;
+    },
+    initSortPages: function initSortPages() {
+      var arr = [];
+      // for (page in pages) {
+      Object.keys(__WEBPACK_IMPORTED_MODULE_0__settings__["a" /* default */]).forEach(function (key) {
+        var page = this[key];
+        arr.push({
+          iconId: page.icon,
+          label: key
+        });
+      }, __WEBPACK_IMPORTED_MODULE_0__settings__["a" /* default */]);
+      return arr;
+    },
+    getItemIndex: function getItemIndex(groups, groupIdx, itemIdx) {
+      var total = 0;
+      for (var i = groupIdx - 1; i >= 0; i--) {
+        total += groups[i].items.length;
+      }
+      total += itemIdx;
+      return String(total);
+    }
+  },
+  watch: {
+    '$viewportState.scrollY': function $viewportStateScrollY() {
+      this.keepSideMenuPosition();
+    }
+  }
 });
 
 /***/ }),
@@ -16359,12 +16402,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
 
@@ -16413,12 +16450,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  },
-  data: function data() {
-    return {};
-  }
+  data: function data() {}
 });
 
 /***/ }),
@@ -19049,7 +19081,7 @@ exports.push([module.i, "", ""]);
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(3)();
-exports.push([module.i, "\n.el-menu[data-v-765e75b1] {\n  background-color: #fff;\n}\n.el-menu-item[data-v-765e75b1]:hover {\n  background-color: #f5f8fa;\n}\n", ""]);
+exports.push([module.i, "\n.side-menu__wrapper[data-v-765e75b1] {\n  position: relative;\n}\n.el-menu[data-v-765e75b1] {\n  background-color: #fff;\n}\n.el-menu-item[data-v-765e75b1] {\n  text-transform: capitalize;\n}\n.el-menu-item[data-v-765e75b1]:hover {\n    background-color: #f5f8fa;\n}\n.el-card[data-v-765e75b1] {\n  border: 1px solid rgba(189, 189, 189, 0.125);\n  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.06), 0px 0px 6px 0px rgba(0, 0, 0, 0.02);\n  position: absolute;\n  width: 100%;\n}\n.el-card__header[data-v-765e75b1] {\n  border-bottom: 1px solid rgba(189, 189, 189, 0.125);\n}\n", ""]);
 
 /***/ }),
 /* 102 */
@@ -86929,9 +86961,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "sm": 20,
       "md": 18
     }
-  }, [_c('section', {
-    staticClass: "notice"
-  }, [_c('h1-circle', {
+  }, [_c('div', [_c('h1-circle', {
     attrs: {
       "icon-id": _vm.categories.notice.icon,
       "color": "amber"
@@ -86941,9 +86971,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "items": _vm.notices,
       "max": 2
     }
-  })], 1), _vm._v(" "), _c('section', {
-    staticClass: "favorite"
-  }, [_c('h1-circle', {
+  })], 1), _vm._v(" "), _c('div', [_c('h1-circle', {
     attrs: {
       "icon-id": _vm.categories.favorite.icon,
       "color": "pink"
@@ -86953,9 +86981,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "items": _vm.notices,
       "max": 1
     }
-  })], 1), _vm._v(" "), _c('section', {
-    staticClass: "top_rank"
-  }, [_c('h1-circle', {
+  })], 1), _vm._v(" "), _c('div', [_c('h1-circle', {
     attrs: {
       "icon-id": _vm.categories.top_rank.icon,
       "color": "light-blue"
@@ -86986,10 +87012,8 @@ if (false) {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _vm._m(0)
-},staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
-  return _c('div', [_c('p', [_vm._v("Hello Comics World")])])
-}]}
+  return _c('div', [_vm._v("\n  Comics\n")])
+},staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
@@ -87168,71 +87192,48 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "sm": 2,
       "md": {
         offset: 2,
-        span: 6
+        span: 5
       }
     }
-  }, [_c('h5', [_vm._v("MENU")]), _vm._v(" "), _c('el-menu', {
+  }, [_c('div', [_vm._v(" ")]), _vm._v(" "), _c('div', {
+    staticClass: "side-menu__wrapper"
+  }, [_c('el-card', {
+    staticClass: "side-menu",
+    style: ({
+      top: _vm.sideMenuTop + 'px'
+    }),
+    attrs: {
+      "header": "MENU"
+    }
+  }, [_c('el-menu', {
     attrs: {
       "mode": "vertical",
-      "default-active": "1"
+      "default-active": "0"
     }
-  }, [_c('el-menu-item-group', {
-    attrs: {
-      "title": "CONTENTS"
-    }
-  }, [_c('el-menu-item', {
-    attrs: {
-      "index": "1"
-    }
-  }, [_c('i', {
-    staticClass: "el-icon-message"
-  }), _vm._v("About")]), _vm._v(" "), _c('el-menu-item', {
-    attrs: {
-      "index": "2"
-    }
-  }, [_c('i', {
-    staticClass: "el-icon-message"
-  }), _vm._v("Illusts")]), _vm._v(" "), _c('el-menu-item', {
-    attrs: {
-      "index": "3"
-    }
-  }, [_c('i', {
-    staticClass: "el-icon-message"
-  }), _vm._v("Comics")]), _vm._v(" "), _c('el-menu-item', {
-    attrs: {
-      "index": "4"
-    }
-  }, [_c('i', {
-    staticClass: "el-icon-message"
-  }), _vm._v("Photos")]), _vm._v(" "), _c('el-menu-item', {
-    attrs: {
-      "index": "5"
-    }
-  }, [_c('i', {
-    staticClass: "el-icon-message"
-  }), _vm._v("Apps")])], 1), _vm._v(" "), _c('el-menu-item-group', {
-    attrs: {
-      "title": "JORRO"
-    }
-  }, [_c('el-menu-item', {
-    attrs: {
-      "index": "6"
-    }
-  }, [_c('i', {
-    staticClass: "el-icon-message"
-  }), _vm._v("Site")]), _vm._v(" "), _c('el-menu-item', {
-    attrs: {
-      "index": "7"
-    }
-  }, [_c('i', {
-    staticClass: "el-icon-message"
-  }), _vm._v("Author")])], 1)], 1)], 1), _vm._v(" "), _c('el-col', {
+  }, _vm._l((_vm.articles), function(article, index1) {
+    return _c('el-menu-item-group', {
+      key: article.title,
+      attrs: {
+        "title": article.title
+      }
+    }, _vm._l((article.items), function(item, index2) {
+      return _c('el-menu-item', {
+        key: item.label,
+        attrs: {
+          "index": _vm.getItemIndex(_vm.articles, index1, index2)
+        }
+      }, [_c('i', {
+        class: ['fa fa-fw', item.iconId]
+      }), _vm._v("\n              " + _vm._s(item.label) + "\n            ")])
+    }))
+  }))], 1)], 1)]), _vm._v(" "), _c('el-col', {
+    staticClass: "content",
     attrs: {
       "xs": 22,
       "sm": 20,
-      "md": 15
+      "md": 16
     }
-  }), _vm._v(" "), _c('el-col', {
+  }, [_c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _vm._v(" "), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br'), _c('br')]), _vm._v(" "), _c('el-col', {
     attrs: {
       "xs": 1,
       "sm": 2,
@@ -90240,8 +90241,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
   name: "MainHeader",
   mounted: function mounted() {
     // ヘッダーの高さを測り、メインコンテンツを引き下げる
-    var total = $('#main-header').outerHeight();
-    $('#main-cnt').css('padding-top', total + 8);
+    // var total = this.$root.getHeaderHight();
+    // $('#main-cnt').css('padding-top', total + 8);
   },
   data: function data() {
     return {

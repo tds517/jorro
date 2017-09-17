@@ -44,15 +44,18 @@ const vm = new Vue({
   router,
   el: '#app',
   data: {
+    fixedHeight: 0
   },
   mounted: function() {
     // ヘッダーの高さを測り、メインコンテンツを引き下げる
-    // var total = $('#main-header').outerHeight();
-    // $('#main-cnt').css('padding-top', total);
+    this.fixedHeight = this.getHeaderHight()
   },
   computed: {
   },
   methods: {
+    getHeaderHight() {
+      return $('#main-header').outerHeight();
+    }
   },
   watch: {
     '$viewportState.label': function() {

@@ -15,7 +15,7 @@
 <div id="app">
   <main-header></main-header>
 
-  <main id="main-cnt">
+  <main id="main-cnt" v-bind:style="{ 'padding-top': fixedHeight + 'px'}">
     <router-view></router-view>
   </main>
 </div>

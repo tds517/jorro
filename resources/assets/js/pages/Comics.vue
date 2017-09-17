@@ -1,18 +1,13 @@
 <template>
   <div>
-    <p>Hello Comics World</p>
+    Comics
   </div>
 </template>
 
 <script>
 export default {
-  mounted() {
-    console.log('Component mounted.')
-  },
   data() {
-    return {
-    }
-  }
+  },
 }
 </script>
 
