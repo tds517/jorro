@@ -17,4 +17,10 @@
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Copyright protection
+    # RewriteCond %{HTTP_REFERER} !^http://(.+\.)?www\.ex\.com/.*$ [NC]
+    RewriteCond %{HTTP_REFERER} !^http://127.0.0.1:8000/.*$ [NC]
+    # RewriteCond %{HTTP_REFERER} !^http://(.+\.)?ex\.com/.*$ [NC]
+    RewriteRule \.(gif|png|jpg|js|pdf|css)$ – [F]
 </IfModule>

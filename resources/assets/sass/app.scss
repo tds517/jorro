@@ -1,4 +1,12 @@
 /*
+ |============================================================================
+ | Jorro CSS
+ |============================================================================
+ |
+ | Copyright (c) 2017 Tadashi Murakami.
+ */
+
+/*
  |----------------------------------------------------------------------------
  | LIBRARY
  |----------------------------------------------------------------------------
@@ -21,6 +29,11 @@
  |----------------------------------------------------------------------------
  */
 
+#main-cnt {
+  padding: 8px;
+  height: 100%;
+}
+
 /*
  |----------------------------------------------------------------------------
  | OVERALL
@@ -41,16 +54,18 @@ html {
 
 body {
  margin: 0;
+ height: 100%;
+ overflow-scrolling: touch;
+ -webkit-overflow-scrolling: touch;
+ overflow-y: scroll;
+ padding: 0!important;
+ width: calc(100vw - 15px);
 }
 
 html, input, select, textarea,
 input[placeholder]::-webkit-input-placeholder,
 button {
 	font-family: "Raleway", "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
-}
-
-.el-button {
-  transition: all .5s ease;
 }
 
 /* 基本色の数だけ、クラスとCSSカスタムプロパティを定義 */
@@ -74,6 +89,11 @@ button {
  |----------------------------------------------------------------------------
  */
 
+ .el-button {
+   transition: all .5s ease;
+ }
+
+/* menuのグループタイトル */
 .el-menu-item-group__title {
   padding-bottom: 16px;
 }

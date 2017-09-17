@@ -14,17 +14,12 @@ $font-size-base: 14px;
 $line-height-base: 1.6;
 $text-color: #636b6f;
 
-
-/*
- |----------------------------------------------------------------------------
- | METHODS
- |----------------------------------------------------------------------------
- |
- | How to use in other SCSS:
- |   .[classname] { @extend %[methodname] }
- |
- */
-
+// |----------------------------------------------------------------------------
+// | METHODS
+// |----------------------------------------------------------------------------
+// | How to use in other SCSS:
+// |  .[classname] { @extend %[methodname] }
+// |
 %clearfix {
   content: " ";
   clear: both;
@@ -37,19 +32,19 @@ $text-color: #636b6f;
 	align-items: center;
 }
 
-/*
- |----------------------------------------------------------------------------
- | COLORS
- |----------------------------------------------------------------------------
- |
- | Base: https://material.io/guidelines/style/color.html
- | Brightness: 100
- |
- | How to use in other SCSS:
- |   .[classname] {
- |      color: $yellow;
- |    }
- */
+
+ // |----------------------------------------------------------------------------
+ // | COLORS
+ // |----------------------------------------------------------------------------
+ // |
+ // | Base: https://material.io/guidelines/style/color.html
+ // | Brightness: 100
+ // |
+ // | How to use in other SCSS:
+ // |   .[classname] {
+ // |      color: $yellow;
+ // |    }
+
 $red        : #EF9A9A;
 $pink       : #F48FB1;
 $purple     : #CE93D8;
