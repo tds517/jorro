@@ -21,26 +21,6 @@
  |----------------------------------------------------------------------------
  */
 
-#main-header {
-  background: $body-bg-color;
-  border-bottom: 1px solid darken($body-bg-color, 5);
-  border-top: 6px solid $brand-primary;
-
-  h1 {
-    #logo {
-      width: 104px;
-    }
-  }
-
-  .header__navbar {
-    margin-top: 12px;
-  }
-}
-
-#main-cnt {
-  padding: 8px;
-}
-
 /*
  |----------------------------------------------------------------------------
  | OVERALL
@@ -85,4 +65,15 @@ button {
   :root {
     --#{$name}: nth($color-values, $index);
   }
+}
+
+
+/*
+ |----------------------------------------------------------------------------
+ | ElementUI ( Custormize )
+ |----------------------------------------------------------------------------
+ */
+
+.el-menu-item-group__title {
+  padding-bottom: 16px;
 }

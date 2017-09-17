@@ -27,29 +27,23 @@ const router = new VueRouter({
 })
 
 /*
-  Vue Viewports
+  Viewports State
  */
-// import VueViewports from 'vue-viewports'
-/* xs: mobile, xs: tablet, md: deskctop, lg: hd-desktop */
-// Vue.use(VueViewports, { 420: 'xs', 768: 'sm', 1024: 'md', 1920: 'lg' })
-
 import ViewportState from './plugins/viewport-state'
+// ElementUIと合わせたViewport
 Vue.use(ViewportState, { 420: 'xs', 768: 'sm', 1024: 'md', 1920: 'lg' })
 
 /*
-  Components
+  Global Components
     ここで宣言すると、下位階層全体で利用可能
  */
+Vue.component('main-header', require('./components/MainHeader.vue'))
 Vue.component('pages-icon', require('./components/PagesIconRender.vue'))
-Vue.component('navbar', require('./components/Navbar.vue'))
-Vue.component('navbar-sns', require('./components/NavbarSNS.vue'))
-
 
 const vm = new Vue({
   router,
   el: '#app',
   data: {
-    viewport: ''
   },
   mounted: function() {
     // ヘッダーの高さを測り、メインコンテンツを引き下げる
@@ -62,10 +56,7 @@ const vm = new Vue({
   },
   watch: {
     '$viewportState.label': function() {
-      this.viewport = this.$viewportState.label
+      // this.viewport = this.$viewportState.label
     },
-    '$viewportState.scrollY': function() {
-      console.log('fff')
-    }
   }
 });

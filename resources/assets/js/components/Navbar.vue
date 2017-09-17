@@ -1,8 +1,8 @@
 <template>
   <nav class="navbar">
     <ul class="clearfix flex">
-      <li v-for="category in categories">
-        <router-link :to="getCategoryPathTo(category)">
+      <li v-for="(obj, category) in categories">
+        <router-link :to="obj.path">
           <pages-icon :category="category"></pages-icon>
         </router-link>
         {{ renderUpperCase(category) }}
@@ -19,14 +19,10 @@ export default {
   data() {
     return {
       // Navbarのアイテム
-      categories: ['about', 'illusts', 'comics', 'photos', 'apps']
+      categories: pages
     }
   },
   methods: {
-    // カテゴリーのパス
-    getCategoryPathTo(category) {
-      return pages[category]['path']
-    },
     // ラベル用に大文字に変換
     renderUpperCase(label) {
       return label.toUpperCase()
@@ -52,7 +48,6 @@ export default {
 
   a {
     display: block;
-    text-decoration: none;
   }
 }
 
@@ -78,6 +73,7 @@ nav {
       opacity: .999;
       padding: 16px;
       position: relative;
+      text-decoration: none;
       transition: all .3s linear;
 
       &:before,
