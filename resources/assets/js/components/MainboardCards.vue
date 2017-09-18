@@ -107,6 +107,7 @@ $card-width: 120px;
 
 .card {
   flex-wrap: wrap;
+  align-content: space-between;
   min-height: $card-height;
   min-width: $card-width;
 

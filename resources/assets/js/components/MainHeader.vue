@@ -28,9 +28,6 @@ import Navbar from './Navbar'
 export default {
   name: "MainHeader",
   mounted() {
-    // ヘッダーの高さを測り、メインコンテンツを引き下げる
-    // var total = this.$root.getHeaderHight();
-    // $('#main-cnt').css('padding-top', total + 8);
   },
   data() {
     return {
