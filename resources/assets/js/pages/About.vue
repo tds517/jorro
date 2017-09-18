@@ -1,25 +1,30 @@
 <template>
   <el-row>
-    <el-col :xs="1" :sm="2" :md="{ offset: 2, span: 5 }">
-      <div>&nbsp;</div>
-      <div class="side-menu__wrapper">
-        <el-card header="MENU" class="side-menu" :style="{ top: sideMenuTop + 'px' }">
+    <el-col :xs="1" :sm="2" :md="{ offset: 2, span: 5 }"
+         class="side-menu" :style="{ top: getSideMenuTop }">
+        <el-card header="MENU">
           <el-menu mode="vertical" default-active="0">
             <el-menu-item-group v-for="(article, index1) in articles"
                 :key="article.title" :title="article.title">
               <el-menu-item v-for="(item, index2) in article.items"
-                  :key="item.label" :index="getItemIndex(articles, index1, index2)">
-                <i :class="['fa fa-fw', item.iconId]"></i>
-                {{ item.label }}
+                  :key="item.label" :index="getItemIndex(articles, index1, index2)"
+                  v-scroll-to="item.to">
+                  <i :class="['fa fa-fw', item.iconId]"></i>
+                  {{ item.label }}
+                </a>
               </el-menu-item>
             </el-menu-item-group>
           </el-menu>
         </el-card>
-      </div>
     </el-col>
     <el-col :xs="22" :sm="20" :md="16" class="content">
 
-
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <article id="about-photos">
+        <p>Hello</p>
+      </article>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
       <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
@@ -32,12 +37,17 @@
 
 <script>
 import pages from './_settings'
-let defaultTop = 8;
+const DEFAULT_TOP = 8;
 
 export default {
   data() {
     return {
-      sideMenuTop: defaultTop,
+      // sideMenuTop: DEFAULT_TOP,
+      sideMenuStyles: {
+        position: 'absolute',
+        top: '0px',
+        left: '0px'
+      },
       articles: [
         {
           title: 'CONTENTS',
@@ -46,18 +56,20 @@ export default {
         {
           title: 'JORRO',
           items: [
-            { iconId: 'fa-globe', label: 'site' },
-            { iconId: 'fa-user', label: 'author' }
+            { iconId: 'fa-globe', label: 'site', to: '#about-site' },
+            { iconId: 'fa-user', label: 'author', to: '#about-author' }
           ]
         }
       ],
-      itemIndex: 0
+    }
+  },
+  computed: {
+    getSideMenuTop() {
+      console.log(this.$root.fixedHeight)
+      return this.$root.fixedHeight + 16 + 'px'
     }
   },
   methods: {
-    keepSideMenuPosition() {
-      this.sideMenuTop = this.$viewportState.scrollY + defaultTop
-    },
     initSortPages() {
       let arr = []
       // for (page in pages) {
@@ -65,7 +77,8 @@ export default {
         let page = this[key]
         arr.push({
           iconId: page.icon,
-          label: key
+          label: key,
+          to: '#about-' + key
         })
       }, pages)
       return arr
@@ -81,7 +94,7 @@ export default {
   },
   watch: {
     '$viewportState.scrollY': function() {
-      this.keepSideMenuPosition()
+      // this.keepSideMenuPosition()
     }
   }
 }
@@ -89,9 +102,8 @@ export default {
 
 <style lang="scss" scoped>
 @import "resources/assets/sass/variables";
-
-.side-menu__wrapper {
-  position: relative;
+.side-menu {
+  position: sticky;
 }
 
 .el-menu {
@@ -110,11 +122,15 @@ export default {
 .el-card {
   border: 1px solid rgba($brand-base-color, .125);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, .06), 0px 0px 6px 0px rgba(0, 0, 0, .02);
-  position: absolute;
   width: 100%;
 }
 
 .el-card__header {
   border-bottom: 1px solid rgba($brand-base-color, .125);
 }
+
+.content {
+  padding: 8px;
+}
+
 </style>

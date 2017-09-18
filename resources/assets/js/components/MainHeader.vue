@@ -47,7 +47,7 @@ export default {
 #main-header {
   background: $body-bg-color;
   border-bottom: 1px solid darken($body-bg-color, 5);
-  border-top: 6px solid $brand-primary;
+  border-top: 3px solid $brand-primary;
   box-shadow: 0 1px 2px $body-bg-color;
   position: fixed;
   top: 0;

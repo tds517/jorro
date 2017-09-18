@@ -22,6 +22,7 @@
     "velocity-animate": "^1.5.0",
     "vue": "^2.3.4",
     "vue-router": "^2.7.0",
+    "vue-scrollto": "^2.7.7",
     "vue-viewports": "^2.2.0"
   },
   "dependencies": {}

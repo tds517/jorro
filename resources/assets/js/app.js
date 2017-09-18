@@ -1,3 +1,16 @@
+/*
+ |------------------------------------------------------------
+ | app.js
+ |------------------------------------------------------------
+ | 役割
+ |         主にライブラリやプラグインの読み込みや初期設定を記述する。
+ |         また、グローバルコンポーネントの定義を記述するもよし。
+ |         グローバルコンポーネントとは、多岐の子コンポーネントに使われるもののこと。
+ |         最後に、アプリケーション全体で使用する機能の定義を記述する。
+ |         なるべく肥大化しないように留意すること。
+ |
+ | Copyright (c) 2017 Tadashi Murakami.
+ */
 // Laravel
 require('./bootstrap');
 window.Vue = require('vue');
@@ -27,12 +40,28 @@ const router = new VueRouter({
 })
 
 /*
+  Vue ScrollTo
+ */
+import VueScrollTo from 'vue-scrollto'
+
+/*
   Viewports State
  */
 import ViewportState from './plugins/viewport-state'
 // ElementUIと合わせたViewport
 Vue.use(ViewportState, { 420: 'xs', 768: 'sm', 1024: 'md', 1920: 'lg' })
 
+Vue.use(VueScrollTo)
+//   container: 'body',
+//   duration: 500,
+//   easing: 'ease',
+//   offset: -this.fixedHeight,
+//   cancelable: true,
+//   onDone: false,
+//   onCancel: false,
+//   x: false,
+//   y: true
+// })
 /*
   Global Components
     ここで宣言すると、下位階層全体で利用可能
@@ -49,6 +78,18 @@ const vm = new Vue({
   mounted: function() {
     // ヘッダーの高さを測り、メインコンテンツを引き下げる
     this.fixedHeight = this.getHeaderHight()
+    // VueScrollTo Set
+    VueScrollTo.install(Vue, {
+      container: 'body',
+      duration: 500,
+      easing: 'linear',
+      offset: -this.fixedHeight - 12, // 12=調整値
+      cancelable: true,
+      onDone: false,
+      onCancel: false,
+      x: false,
+      y: true
+    })
   },
   computed: {
   },
