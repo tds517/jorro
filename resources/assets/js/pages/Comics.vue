@@ -1,17 +1,22 @@
 <template>
-  <div>
-    <p>Comics</p>
-  </div>
+  <p>Comics</p>
 </template>
 
 <script>
 export default {
-  data() {
-    return {}
-  },
+  
 }
+
 </script>
 
 <style lang="scss" scoped>
 @import "resources/assets/sass/variables";
+
+.side-menu {
+  position: sticky;
+}
+
+.contents {
+  padding: 16px;
+}
 </style>

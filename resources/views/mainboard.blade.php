@@ -2,6 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>jorro</title>
@@ -15,7 +16,7 @@
 <div id="app">
   <main-header></main-header>
 
-  <main id="main-cnt" v-bind:style="{ 'padding-top': fixedHeight + 'px'}">
+  <main id="main-cnt" :style="{ 'padding-top': fixedHeight + 'px'}">
     <router-view></router-view>
   </main>
 </div>

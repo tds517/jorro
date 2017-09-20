@@ -76,5 +76,4 @@ export default {
 
 <style lang="scss" scoped>
 @import "resources/assets/sass/variables";
-
 </style>

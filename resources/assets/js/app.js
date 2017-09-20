@@ -43,6 +43,7 @@ const router = new VueRouter({
   Vue ScrollTo
  */
 import VueScrollTo from 'vue-scrollto'
+Vue.use(VueScrollTo)
 
 /*
   Viewports State
@@ -51,17 +52,6 @@ import ViewportState from './plugins/viewport-state'
 // ElementUIと合わせたViewport
 Vue.use(ViewportState, { 420: 'xs', 768: 'sm', 1024: 'md', 1920: 'lg' })
 
-Vue.use(VueScrollTo)
-//   container: 'body',
-//   duration: 500,
-//   easing: 'ease',
-//   offset: -this.fixedHeight,
-//   cancelable: true,
-//   onDone: false,
-//   onCancel: false,
-//   x: false,
-//   y: true
-// })
 /*
   Global Components
     ここで宣言すると、下位階層全体で利用可能
