@@ -20,10 +20,8 @@
 
         <el-form-item label="血液型">
           <el-radio-group v-model="forms.blood">
-            <el-radio-button label="A" />
-            <el-radio-button label="B" />
-            <el-radio-button label="O" />
-            <el-radio-button label="AB" />
+            <el-radio-button v-for="blood in ['A', 'B', 'O', 'AB']"
+                :label="blood" :key="'forms.blood.' + blood" />
           </el-radio-group>
         </el-form-item>
 
@@ -97,23 +95,52 @@
 
               <div class="flex">
                 <div v-show="q.stepDone == 0">
-                  <h2>{{ q.stepDone + 1 }}問目</h2>
+                  <about-question　type="single" :reversed="false"
+                      :correctChoices="['BUMP OF CHICKEN']"
+                      :dummyChoices="['aiko', '関ジャニ∞']" @answerd="onAnswerd">
+                    <p slot="question">
+                      私の好きなアーティストは次のうちどれでしょう？
+                    </p>
+                  </about-question>
                 </div>
 
                 <div v-show="q.stepDone == 1">
-                  <h2>{{ q.stepDone + 1 }}問目</h2>
+                  <about-question type="multiple" :reversed="false"
+                      :correctChoices="['BUMP OF CHICKEN', 'RADWIMPS']"
+                      :dummyChoices="['EXILE', 'flumpool']" @answerd="onAnswerd">
+                    <p slot="question">
+                      私の好きなアーティストは次のうちどれでしょう？（複数選択）
+                    </p>
+                  </about-question>
                 </div>
 
                 <div v-show="q.stepDone == 2">
-                  <h2>{{ q.stepDone + 1 }}問目</h2>
+                  <about-question type="choice"
+                      :correctChoices="false" @answerd="onAnswerd">
+                    <p slot="question">
+                      私の誕生日は、5月10日です。
+                    </p>
+                  </about-question>
                 </div>
 
                 <div v-show="q.stepDone == 3">
-                  <h2>{{ q.stepDone + 1 }}問目</h2>
+                  <about-question type="multiple" :reversed="true"
+                      :correctChoices="['ワンピース', 'RADWIMPS']"
+                      :dummyChoices="['TOTALFAT', 'BABYMETAL']" @answerd="onAnswerd">
+                    <p slot="question">
+                      私が<b>好みでない</b>アーティストは次のうちどれでしょう？（複数選択）
+                    </p>
+                  </about-question>
                 </div>
 
                 <div v-show="q.stepDone == 4">
-                  <h2>{{ q.stepDone + 1 }}問目</h2>
+                  <about-question type="single" :reversed="true"
+                      :correctChoices="['BUMP OF CHICKEN', '相対性理論']"
+                      :dummyChoices="['AAA']" @answerd="onAnswerd">
+                    <p slot="question">
+                      私が<b>好みでない</b>アーティストは次のうちどれでしょう？
+                    </p>
+                  </about-question>
                 </div>
 
                 <el-button type="primary" @click="nextStep"><i class="fa fa-fw fa-play"></i></el-button>
@@ -122,6 +149,8 @@
 
             <div v-show="q.stepDone == 5">
               <p>全部解き終わったー</p>
+              <p>{{ q.amount}} 問中、{{ q.result[true] }} 問正解です！！</p>
+              <el-rate v-model="q.result[true]"></el-rate>
             </div>
           </el-col>
           <el-col :span="6"><div>&nbsp;</div></el-col>
@@ -139,9 +168,16 @@ import F_ARTISTS from '../../models/demodata/favorite-artists'
 import F_COMICS from '../../models/demodata/favorite-comics'
 import F_GAMES from '../../models/demodata/favorite-games'
 
+import AboutQuestion from './AboutQuestion'
+
 export default {
   data() {
     return {
+      data: {
+        artists: F_ARTISTS,
+        comics: F_COMICS,
+        games: F_GAMES
+      },
       forms: {
         name: '村上　忠',
         sex: '男',
@@ -156,6 +192,7 @@ export default {
           max: this.getHisoryYears(1989)
         },
         favorites: [
+          // { label: '音楽', children: this.getFavoriteLabels(F_ARTISTS)},
           { label: '音楽', children: this.getFavoriteLabels(F_ARTISTS)},
           { label: '漫画', children: [
               { label: 'ジャンプ', children: this.getFavoriteLabels(F_COMICS['JUMP'])},
@@ -188,9 +225,9 @@ export default {
       prefectures: PREFECTURES,
       q: {
         stepDone: -1,
-        amount: 5
+        amount: 5,
+        result: { true: 0, false: 0}
       }
-
     }
   },
   methods: {
@@ -206,8 +243,17 @@ export default {
     },
     nextStep() {
       if (this.q.stepDone++ > 5) this.q.stepDone = 0
+    },
+    onAnswerd(answer) {
+      console.log(answer)
+      this.q.result[answer]++
+      console.log(this.q.result)
+      this.nextStep()
     }
   },
+  components: {
+    AboutQuestion
+  }
 }
 </script>
 
