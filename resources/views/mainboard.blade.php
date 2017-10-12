@@ -5,7 +5,7 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>jorro</title>
-  <link rel="stylesheet" href="css/app.css"/>
+  <link rel="stylesheet" href="{{ mix('css/app.css') }}"/>
   <script type="text/javascript">
       window.Laravel = window.Laravel || {};
       window.Laravel.csrfToken = "{{ csrf_token() }}";
@@ -20,7 +20,7 @@
   </main>
 </div>
 
-<script src="js/app.js"></script>
+<script src="{{ mix('js/app.js') }}"></script>
 
 </body>
 </html>
