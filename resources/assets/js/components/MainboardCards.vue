@@ -1,7 +1,7 @@
 <template>
   <el-row>
     <el-col :span="3" :offset="1" class="card"
-      v-for="(item, index) in limitedItems" :key="item"
+      v-for="(item, index) in limitedItems" :key="item.id"
     >
       <!-- TODO: CONTENTS URL -->
       <a href="#"

@@ -1,6 +1,7 @@
 <template>
   <div>
     <slot name="question"></slot>
+
     <div v-if="type == 'single'">
       <ol>
         <li v-for="(choice, index) in choices">
@@ -21,6 +22,10 @@
       </el-checkbox-group>
     </div>
 
+    <el-button type="primary" @click="checkAnswer" v-if="type !== 'choice'">
+      <i class="fa fa-fw fa-arrow-right"></i>
+    </el-button>
+
     <div v-else-if="type == 'choice'">
       <el-button type="success" @click="checkAnswer(true)">
         <i class="fa fa-fw fa-circle-o"></i>
@@ -29,28 +34,28 @@
         <i class="fa fa-fw fa-times"></i>
       </el-button>
     </div>
-
-    <el-button type="primary" @click="checkAnswer" v-if="type !== 'choice'">
-      <i class="fa fa-fw fa-arrow-right"></i>
-    </el-button>
   </div>
 </template>
 
 <script>
 export default {
   props: {
+    // 質問の形式（単一選択、複数選択、マルバツ）
     type: {
       required: true,
       type: String
     },
+    // 逆さ質問（ダミー選択肢を選ばせる）
     reversed: {
       type: Boolean,
       default: false
     },
+    // 正しい選択肢群
     correctChoices: {
       required: true,
       type: [Array, Boolean]
     },
+    // ダミー選択肢群
     dummyChoices: Array
   },
   data() {

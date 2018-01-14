@@ -16,8 +16,8 @@
           </el-menu>
         </el-card>
     </el-col>
-    <el-col :xs="22" :sm="20" :md="{offset:1 , span: 15}" class="content">
 
+    <el-col :xs="22" :sm="20" :md="{offset:1 , span: 15}" class="content">
       <about-article about="illusts" :item="findArticleKey('illusts')">
         <p>製作したイラストや、頂いたイラストを展示しています。</p>
         <p>版権物のイラストは、1次創作者の許可を得たものではなく、同人要素を含みます。</p>
@@ -103,9 +103,9 @@ export default {
         }
       ],
       enviroments: [
-        { name: 'Google Chrome',  enabled: 'Latet' },
-        { name: 'Firefox',        enabled: 'Latet' },
-        { name: 'Safari',         enabled: 'Latet' },
+        { name: 'Google Chrome',  enabled: 'Latest' },
+        { name: 'Firefox',        enabled: 'Latest' },
+        { name: 'Safari',         enabled: 'Latest' },
         { name: 'IE11',           enabled: 'X' },
         { name: 'Microsoft Edge', enabled: 'X' },
       ],

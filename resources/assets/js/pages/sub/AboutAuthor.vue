@@ -142,8 +142,7 @@
                     </p>
                   </about-question>
                 </div>
-
-                <el-button type="primary" @click="nextStep"><i class="fa fa-fw fa-play"></i></el-button>
+                <!-- <el-button type="primary" @click="nextStep"><i class="fa fa-fw fa-play"></i></el-button> -->
               </div>
             </div>
 
@@ -192,18 +191,17 @@ export default {
           max: this.getHisoryYears(1989)
         },
         favorites: [
-          // { label: '音楽', children: this.getFavoriteLabels(F_ARTISTS)},
-          { label: '音楽', children: this.getFavoriteLabels(F_ARTISTS)},
+          { label: '音楽', children: this.toLabel(F_ARTISTS)},
           { label: '漫画', children: [
-              { label: 'ジャンプ', children: this.getFavoriteLabels(F_COMICS['JUMP'])},
-              { label: '他少年誌', children: this.getFavoriteLabels(F_COMICS['JUNIOR'])},
-              { label: '青年誌', children: this.getFavoriteLabels(F_COMICS['SENIOR'])}
+              { label: 'ジャンプ', children: this.toLabel(F_COMICS['JUMP'])},
+              { label: '他少年誌', children: this.toLabel(F_COMICS['JUNIOR'])},
+              { label: '青年誌', children: this.toLabel(F_COMICS['SENIOR'])}
             ]
           },
           { label: 'ゲーム', children: [
-              { label: 'コンシューマ', children: this.getFavoriteLabels(F_GAMES['CONSUMER'])},
-              { label: 'ネット', children: this.getFavoriteLabels(F_GAMES['NET'])},
-              { label: 'アプリ', children: this.getFavoriteLabels(F_GAMES['APP'])}
+              { label: 'コンシューマ', children: this.toLabel(F_GAMES['CONSUMER'])},
+              { label: 'ネット', children: this.toLabel(F_GAMES['NET'])},
+              { label: 'アプリ', children: this.toLabel(F_GAMES['APP'])}
             ]
           }
         ],
@@ -234,7 +232,7 @@ export default {
     getHisoryYears(startYear) {
       return new Date().getFullYear() - startYear
     },
-    getFavoriteLabels(list) {
+    toLabel(list) {
       let ret = []
       list.forEach(function(item) {
         ret.push({label: item})
@@ -242,14 +240,13 @@ export default {
       return ret
     },
     nextStep() {
-      if (this.q.stepDone++ > 5) this.q.stepDone = 0
+      if (this.q.stepDone++ > this.q.amount) this.q.stepDone = 0
     },
     onAnswerd(answer) {
-      console.log(answer)
       this.q.result[answer]++
-      console.log(this.q.result)
       this.nextStep()
-    }
+    },
+    // TODO: パスから数だけ配列の値を取得して新しい配列を返す
   },
   components: {
     AboutQuestion
