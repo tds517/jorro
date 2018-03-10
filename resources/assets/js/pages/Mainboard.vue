@@ -1,5 +1,5 @@
 <template>
-  <el-row>
+  <el-row id="contents">
     <el-col :xs="1" :sm="2" :md="3">
       <div>&nbsp;</div>
     </el-col>
@@ -77,4 +77,7 @@ export default {
 <style lang="scss" scoped>
 @import "resources/assets/sass/variables";
 
+#contents {
+  padding: 8px;
+}
 </style>

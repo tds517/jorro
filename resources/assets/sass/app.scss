@@ -30,7 +30,7 @@
  */
 
 #main-cnt {
-  padding: 8px;
+  // padding: 8px;
   height: 100%;
 }
 
@@ -48,8 +48,12 @@
 	@extend %flex;
 }
 
+.t-center {
+  text-align: center;
+}
+
 html {
- background-color: #fff;
+ background-color: rgba(#fdfdfe, .7);
 }
 
 body {
@@ -66,6 +70,7 @@ html, input, select, textarea,
 input[placeholder]::-webkit-input-placeholder,
 button {
 	font-family: "Raleway", "Noto Sans JP", "游ゴシック Medium", "游ゴシック体", "Yu Gothic Medium", YuGothic, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-weight: 300;
 }
 
 /* 基本色の数だけ、クラスとCSSカスタムプロパティを定義 */
@@ -96,4 +101,9 @@ button {
 /* menuのグループタイトル */
 .el-menu-item-group__title {
   padding-bottom: 16px;
+}
+
+.el-checkbox__label {
+  color: $text-color;
+  font-weight: lighter;
 }
