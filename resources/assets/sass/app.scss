@@ -30,7 +30,7 @@
  */
 
 #main-cnt {
-  padding: 8px;
+  // padding: 8px;
   height: 100%;
 }
 
@@ -101,4 +101,9 @@ button {
 /* menuのグループタイトル */
 .el-menu-item-group__title {
   padding-bottom: 16px;
+}
+
+.el-checkbox__label {
+  color: $text-color;
+  font-weight: lighter;
 }

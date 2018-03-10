@@ -1,5 +1,5 @@
 <template>
-  <el-row>
+  <el-row id="contents">
     <el-col :xs="1" :sm="2" :md="{offset: 2, span: 5}"
          class="side-menu" :style="{ top: getSideMenuTop }">
         <el-card header="MENU">
@@ -164,12 +164,18 @@ export default {
 
 <style lang="scss" scoped>
 @import "resources/assets/sass/variables";
+
+#contents {
+  padding: 8px;
+}
+
 .side-menu {
   position: sticky;
 }
 
 .el-menu {
   background-color: #fff;
+  border-right: 0;
 }
 
 .el-menu-item {

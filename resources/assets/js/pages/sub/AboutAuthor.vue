@@ -63,12 +63,14 @@
         </el-form-item>
 
         <el-form-item label="クイズに挑戦...">
-          <el-switch v-model="forms.enabledQuiz" :width="80"
-              on-text="する!!" off-text="する??" />
+          <el-button type="primary" @click="forms.enabledQuiz = true"
+              size="medium">
+            する
+          </el-button>
         </el-form-item>
       </el-form>
 
-      <el-dialog :visible.sync="forms.enabledQuiz" size="full">
+      <el-dialog :visible.sync="forms.enabledQuiz" :fullscreen="true">
         <h1 class="title">クイズ</h1>
         <el-row>
           <el-col :span="6"><div>&nbsp;</div></el-col>
@@ -86,14 +88,12 @@
               </div>
             </div>
 
-            <div v-show="0 <= q.stepDone && q.stepDone < q.amount">
-              <div class="flex" style="margin-right: -50px;">
-                <el-steps :space="80" :active="q.stepDone">
-                  <el-step v-for="step in q.amount" :title="step + '問目'" :key="'step-' + step"></el-step>
-                </el-steps>
-              </div>
+            <div v-show="0 <= q.stepDone && q.stepDone < q.amount" style="margin-right: -130px;">
+              <el-steps :space="200" :active="q.stepDone">
+                <el-step v-for="step in q.amount" :title="step + '問目'"
+                    :key="'step-' + step"></el-step>
+              </el-steps>
 
-              <div class="flex">
                 <div v-show="q.stepDone == 0">
                   <about-question　type="single" :reversed="false"
                       :correctChoices="['BUMP OF CHICKEN']"
@@ -125,7 +125,7 @@
 
                 <div v-show="q.stepDone == 3">
                   <about-question type="multiple" :reversed="true"
-                      :correctChoices="['ワンピース', 'RADWIMPS']"
+                      :correctChoices="['BUMP OF CHICKEN', 'RADWIMPS']"
                       :dummyChoices="['TOTALFAT', 'BABYMETAL']" @answerd="onAnswerd">
                     <p slot="question">
                       私が<b>好みでない</b>アーティストは次のうちどれでしょう？（複数選択）
@@ -240,13 +240,27 @@ export default {
       return ret
     },
     nextStep() {
-      if (this.q.stepDone++ > this.q.amount) this.q.stepDone = 0
+      this.q.stepDone++
+      if (this.q.stepDone > this.q.amount) this.q.stepDone = 0
+      console.log(this.q)
     },
     onAnswerd(answer) {
       this.q.result[answer]++
       this.nextStep()
     },
     // TODO: パスから数だけ配列の値を取得して新しい配列を返す
+  },
+  watch: {
+    'forms.enabledQuiz': function(newVal) {
+      // ダイアログが閉じられた時に、初期化する１
+      if (!newVal) {
+        this.q = {
+          stepDone: -1,
+          amount: 5,
+          result: { true: 0, false: 0}
+        }
+      }
+    }
   },
   components: {
     AboutQuestion
@@ -270,5 +284,7 @@ export default {
 .title {
   text-align: center;
 }
+
+
 
 </style>

@@ -1,7 +1,7 @@
 <template>
   <el-table :data="data" height="400">
     <el-table-column property="category" width="64" align="center">
-      <template scope="scope">
+      <template slot-scope="scope">
         <pages-icon :category="scope.row.category"></pages-icon>
       </template>
     </el-table-column>

@@ -2913,7 +2913,6 @@
  */
 
 #main-cnt {
-  padding: 8px;
   height: 100%;
 }
 
@@ -3216,5 +3215,10 @@ button {
 
 .el-menu-item-group__title {
   padding-bottom: 16px;
+}
+
+.el-checkbox__label {
+  color: #737b7f;
+  font-weight: lighter;
 }
 
