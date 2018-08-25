@@ -53,6 +53,12 @@ import ViewportState from './plugins/viewport-state'
 Vue.use(ViewportState, { 420: 'xs', 768: 'sm', 1024: 'md', 1920: 'lg' })
 
 /*
+  View Lazyload
+ */
+import VueLazyload from 'vue-lazyload'
+Vue.use(VueLazyload)
+
+/*
   Global Components
     ここで宣言すると、下位階層全体で利用可能
  */
