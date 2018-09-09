@@ -7,8 +7,8 @@ export default [
     date: '2014-02-22',
     faved: false,
     sum_fav: 0,
-    comment: '淡い色合いのホロ',
-    tags: ['狼と香辛料', '落書き']
+    comment: '淡い色合いのホロ Holo',
+    tags: '狼と香辛料,落書き'
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export default [
     faved: false,
     sum_fav: 2,
     comment: 'ラブライブ・一ノ瀬志希<br>トリックオアトリート？',
-    tags: ['ラブライブ']
+    tags: 'ラブライブ'
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ export default [
     faved: false,
     sum_fav: 1,
     comment: 'サマーウォーズ・キングカズマ！',
-    tags: ['サマーウォーズ', '落書き']
+    tags: 'サマーウォーズ,落書き'
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ export default [
     faved: false,
     sum_fav: 2,
     comment: 'ラブライブ・一ノ瀬志希<br>トリックオアトリート？',
-    tags: ['ラブライブ']
+    tags: 'ラブライブ'
   },
   {
     id: 5,
@@ -52,6 +52,6 @@ export default [
     faved: false,
     sum_fav: 0,
     comment: '淡い色合いのホロ',
-    tags: ['狼と香辛料', '落書き']
+    tags: '狼と香辛料,落書き'
   },
 ]
