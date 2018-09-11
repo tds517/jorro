@@ -46,10 +46,10 @@
                 </span>
                 <el-switch v-model="searchOrder"
                     id="search-order"
-                    :active-text="order.new"
-                    :active-value="order.new"
-                    :inactive-text="order.old"
-                    :inactive-value="order.old"
+                    :active-text="ORDER.new"
+                    :active-value="ORDER.new"
+                    :inactive-text="ORDER.old"
+                    :inactive-value="ORDER.old"
                     active-color="var(--red)"
                     />
               </el-form-item>
@@ -136,7 +136,7 @@
 
 import ILLUSTS from '../models/demodata/illusts'
 // 並び順
-const ORDER = {
+const _ORDER = {
   new: '新しい順',
   old: '旧い順'
 }
@@ -154,8 +154,7 @@ export default {
     return {
       enabledSearch: false,
       searchWord: '',
-      order: ORDER,
-      searchOrder: ORDER.new,
+      searchOrder: _ORDER.new,
       tags: ['狼と香辛料', 'ラグナロクオンライン', '落書き'],
       enabledTags: [],
       types: {},
@@ -173,7 +172,9 @@ export default {
         sum_fav: 0,
         title: 'Title',
         visible: false,
-      }
+      },
+      // 定数
+      ORDER: _ORDER,
     }
   },
   methods: {
@@ -226,17 +227,55 @@ export default {
       let count = this.dialog.sum_fav + 1
       this.dialog.sum_fav = count
       this.illusts[this.dialog.index].sum_fav = count
+    },
+    convertKataToHira(str) {
+      return str.replace(/[\u30a1-\u30f6]/g, function(match) {
+        let chr = match.charCodeAt(0) - 0x60;
+        return String.fromCharCode(chr);
+      });
     }
   },
   computed: {
+    /**
+     * イラストデータリストを検索条件でフィルタリングしたリストを返す
+     *
+     * @return {Array} [イラスト(検索フィルター)]
+     */
     filteredIllusts() {
-      return this.illusts.filter(elem => {
-        return this.searchWord.toLowerCase()
-               .split(/¥s+/)
-               .map( w => elem.title.toLowerCase().indexOf(w) > -1
-                     || elem.comment.toLowerCase().indexOf(w) > -1)
-               .some( result => result === true)
+      let searchFilterd = this.illusts.filter(elem => {
+        if (this.searchWord === '' && this.enabledTags.length == 0) {
+          return true
+        }
+        // 検索ワード
+        let word = this.convertKataToHira(this.searchWord.toLowerCase())
+        let title = this.convertKataToHira(elem.title.toLowerCase())
+        let comment = this.convertKataToHira(elem.comment.toLowerCase())
+        let tags = this.convertKataToHira(elem.tags.toLowerCase())
+        // ひらがな、小文字化したワードとデータを照合
+        let wordFilterd =
+              word.split(/¥s+/)
+                  .map(w => title.indexOf(w) > -1
+                        || comment.indexOf(w) > -1
+                        || tags.indexOf(w) > -1)
+                  .some(result => result === true)
+
+        let tagFilterd = true
+        // チェックされているタグがあれば、フィルターを判定
+        if (this.enabledTags.length > 0) {
+          tagFilterd =
+              elem.tags.split(/,/)
+                       .map(tag => this.enabledTags.indexOf(tag) > -1)
+                       .some(result => result === true)
+        }
+        return wordFilterd && tagFilterd
       });
+      // 選択ソートから、比較素子を取得
+      let sort = (this.searchOrder == this.ORDER.new) ? 1 : -1
+      // 選択によってソートを変更
+      let sorted = searchFilterd.sort((a, b) => {
+        return a.date < b.date ? sort : sort * -1
+      });
+      return sorted
     }
   }
 }
